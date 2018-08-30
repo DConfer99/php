@@ -18,10 +18,10 @@ $password = $_GET['password'];
       <input type="submit" value="go">
     </form>
 
-    <?php
-echo "Your username was " + $username;
+<?php
+echo "Your username was " . $username;
 echo "<br />";
 echo "Your password was $password";
-     ?>
+?>
   </body>
 </html>
