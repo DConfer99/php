@@ -17,6 +17,7 @@ $password = $_POST['password'];
       <br />
       <input type="submit" value="go">
     </form>
+    <br />
 
 <?php
 if (isset($username) && isset($password)) {
