@@ -21,10 +21,14 @@ $password = $_POST['password'];
 
 <?php
 if (isset($username) && isset($password)) {
-  echo "Your username was " . $username;
-  echo "<br />";
-  echo "Your password was $password";
+  //echo "Your username was " . $username;
+  //echo "<br />";
+  //echo "Your password was $password";
+  if ($username == "dillon" && $password == "password"){
+    $_SESSION['username'] = $username;
+  }
 }
+echo "Logged in as: " . $_SESSION['username'];
 ?>
   </body>
 </html>
