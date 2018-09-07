@@ -1,6 +1,20 @@
 <?php
 session_start();
-require('dbconnection.php');
+require('dbconnection.php'); //connects to db, loads in all data from dbconnection
+if (isset($_POST['username'])){
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  $sql = "SELECT username, password FROM users where username = '$username'"; //sql statement to execute
+  $result=$conn->query($sql); //execute sql and store result as array
+
+  //extracting query infornamtion, pulls out one by one, stores in row
+  while ($row = $result->fetch_assoc()){
+    if ($username == $row['username'] && $password == $row['password']){
+      $_SESSION['username'] = $username;
+    } 
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,14 +23,6 @@ require('dbconnection.php');
     <meta charset="utf-8">
     <title></title>
   </head>
-
-<?php
-$username = $_POST['username'];
-$password = $_POST['password'];
-if (isset($_POST['logout'])){
-  unset($_SESSION['username']);
-}
- ?>
 
   <body>
     <form method="post" action="">
