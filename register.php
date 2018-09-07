@@ -18,8 +18,8 @@
   <body>
     <p>Register Here</p>
     <form method="post" action="">
-      <input type="text" name="username" <br>
-      <input type="password" name="password"<br>
+      <input type="text" name="username" <br />
+      <input type="password" name="password"<br />
       <input type="submit">
     </form>
 
