@@ -12,7 +12,7 @@ if (isset($_POST['username'])){
   while ($row = $result->fetch_assoc()){
     if ($username == $row['username'] && $password == $row['password']){
       $_SESSION['username'] = $username;
-    } 
+    }
   }
 }
 ?>
@@ -23,6 +23,12 @@ if (isset($_POST['username'])){
     <meta charset="utf-8">
     <title></title>
   </head>
+
+<?php
+if (isset($_POST['logout'])){
+  unset($_SESSION['username']);
+}
+ ?>
 
   <body>
     <form method="post" action="">
@@ -35,15 +41,8 @@ if (isset($_POST['username'])){
     <br />
 
 <?php
-if (isset($username) && isset($password)) {
-  //echo "Your username was " . $username;
-  //echo "<br />";
-  //echo "Your password was $password";
-  if ($username == "dillon" && $password == "password"){
-    $_SESSION['username'] = $username;
-  }
-}
 echo "Logged in as: " . $_SESSION['username'];
-?>
+ ?>
+
   </body>
 </html>
