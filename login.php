@@ -10,7 +10,7 @@ if (isset($_POST['username'])){
 
   //extracting query infornamtion, pulls out one by one, stores in row
   while ($row = $result->fetch_assoc()){
-    if ($username == $row['username'] && $password == $row['password']){
+    if ($username == $row['username'] && password_verify($password, $row['password']) ){
       $_SESSION['username'] = $username;
     }
   }
