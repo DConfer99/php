@@ -5,6 +5,7 @@
    require('dbconnection.php');
    $username = $_POST['username']; //looks for username in post
    $password = $_POST['password']; //looks for password in post
+   $password = password_hash($password, PASSWORD_BCRYPT); //works with PHP 5.5 and higher
    $sql="INSERT INTO users (username, password) VALUES ('$username', '$password')";
    $conn->query($sql);
  }
