@@ -5,7 +5,7 @@ if (!isset($_SESSION)){
 
 if (!isset($_SESSION['username'])){
   //die("DONTCHU DO IT.");
-  header("Location: login.php');
+  header("Location: login.php");
 }
 
 var_dump($_POST['upload']);
