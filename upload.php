@@ -11,6 +11,7 @@ if (!isset($_SESSION['username'])){
 var_dump($_POST['upload']);
 echo "<hr />";
 var_dump($_FILES['upload']);
+echo "<hr />";
 
 if (isset($_FILES['upload'])) {
   $target_dir = "uploads/";
