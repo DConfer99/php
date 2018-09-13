@@ -33,9 +33,10 @@ if (isset($_POST['logout'])){
   <body>
 
     <a href="register.php">Register Here</a>
+
     <?php
     if (isset($_SESSION['username'])){
-    
+    echo "<a href="upload.php" name="upload"> | Upload</a>"
     }
      ?>
 
