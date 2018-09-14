@@ -19,10 +19,14 @@ if (isset($_FILES['upload'])) {
 
   $uploadVerification = true;
 
-  //checks to see if file already exists
+  //checks to see if file already exists, all variables are global- $ret works everywhere
   if(file_exists($target_file)){
+
+  }
+
+  if($_FILES['upload']['size'] > 2000000){
     $uploadVerification = false;
-    $ret = "Sorry, file already exists.";
+    $ret = "Sorry, file already is too big.";
   }
 
   if ($uploadVerification){
