@@ -16,7 +16,7 @@ echo "<hr />";
 if (isset($_FILES['upload'])) {
   //check to see if uploads folder file_exists
   // if uploads folder does not exist, create it
-  //file_exists works with files and directories
+  //file_exists works with files and directories 
 
    if (!file_exists("uploads"){
      mkdir("uploads");
