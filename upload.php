@@ -18,7 +18,7 @@ if (isset($_FILES['upload'])) {
   // if uploads folder does not exist, create it
   //file_exists works with files and directories
 
-   if (!file_exists("uploads"){
+   if (!file_exists("uploads")){
      mkdir("uploads");
    }
 
