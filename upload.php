@@ -18,11 +18,15 @@ if (isset($_FILES['upload'])) {
   // if uploads folder does not exist, create it
   //file_exists works with files and directories
 
-   if (!file_exists($_SESSION['username'] . "_uploads")){
-     mkdir($_SESSION['username'] . "_uploads");
+   if (!file_exists("./uploads")){
+     mkdir("./uploads");
    }
 
-  $target_dir = $_SESSION['username'] . "_uploads/";
+   if (!file_exists("./uploads/" . $_SESSION['username'])){
+     mkdir("./uploads/" . $_SESSION['username']);
+   }
+
+  $target_dir = "./uploads/" . $_SESSION['username'];
   $target_file = $target_dir . basename($_FILES['upload']['name']);
 
   $uploadVerification = true;
