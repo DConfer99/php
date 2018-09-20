@@ -44,11 +44,11 @@ $conn->close();
        <?php
        // PHP loop generates rows based on databses contents
           while($row = $result->fetch_assoc()){
-            echo "tr";
+            echo "<tr>";
               echo "<td>" . $row['userid'] . "</td>";
               echo "<td>" . $row['username'] . "</td>";
               echo "<td>" . $row['password'] . "</td>";
-            echo "/tr";
+            echo "</tr>";
           }
 
         ?>
