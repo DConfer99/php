@@ -41,10 +41,8 @@ $conn->close();
          <th>Hashed Password</th>
        </tr>
 
-       // PHP loop generates rows based on databses contents
-
        <?php
-
+       // PHP loop generates rows based on databses contents
           while($row = $result->fetch_assoc()){
             echo "tr";
               echo "<td>" . $row['userid'] . "</td>";
