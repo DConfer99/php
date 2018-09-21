@@ -39,6 +39,7 @@ $conn->close();
          <th>User ID</th>
          <th>User Name</th>
          <th>Hashed Password</th>
+         <th>Actions</th>
        </tr>
 
        <?php
@@ -48,6 +49,12 @@ $conn->close();
               echo "<td>" . $row['user_id'] . "</td>";
               echo "<td>" . $row['username'] . "</td>";
               echo "<td>" . $row['password'] . "</td>";
+              echo "<td>
+                          <form action=\"\" method=\"post\">
+                            <input type=\"hidden\" value=\"" . $row['user_id'] . "\">
+                            <input type=\"submit\" value=\"Delete\">
+                          </form>
+                    </td>";
             echo "</tr>";
           }
 
