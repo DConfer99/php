@@ -14,6 +14,12 @@ if (!isset($_SESSION['username'])){
 //bring in database connection
 require('dbconnection.php');
 
+//if delete button is pressed
+if (isset($_POST['user_id']) && isset($_POST['delete'])){
+  $sql = "DELETE from users where user_id =" . $_POST['userid'] . ";";
+  $result = $conn-query($sql);
+}
+
 //create SQL query
 $sql = "SELECT * from users;";
 
@@ -51,8 +57,8 @@ $conn->close();
               echo "<td>" . $row['password'] . "</td>";
               echo "<td>
                           <form action=\"\" method=\"post\">
-                            <input type=\"hidden\" value=\"" . $row['user_id'] . "\">
-                            <input type=\"submit\" value=\"Delete\">
+                            <input name=\"user_id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
+                            <input type=\"submit\" value=\"Delete\" name=\"delete\">
                           </form>
                     </td>";
             echo "</tr>";
