@@ -63,7 +63,7 @@ $conn->close();
                    </td>";
 
               echo "<td>
-                          <form action=\"method=\"post\">
+                          <form action=\"\" method=\"post\">
                             <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
                             <input type=\"submit\" value=\"Delete\" name=\"delete\">
                           </form>
