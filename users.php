@@ -17,7 +17,7 @@ require('dbconnection.php');
 //if delete button is pressed
 if (isset($_POST['id']) && isset($_POST['delete'])){
   $sql = "DELETE from users where user_id =" . $_POST['userid'] . ";";
-  $result = $conn-query($sql);
+  $result = $conn->query($sql);
 }
 
 //create SQL query
