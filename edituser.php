@@ -16,7 +16,7 @@ if (isset($_GET['id']) && $_GET['edit']=="Edit"){
   require('dbconnection.php');
 
   $sql = "SELECT * from users where user_id=" . $_GET['id']; //id is an int datatype, doesn't require quotes
-  // $result=$conn=>query($sql);
+  $result=$conn=>query($sql);
 
 // echo "<form action=\"\" method=\"post\">";
 //             while ($row = $result->fetch_assoc()){
