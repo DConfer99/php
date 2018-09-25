@@ -21,11 +21,11 @@ if (isset($_GET['id']) && $_GET['edit']=="Edit"){
 echo "<form action=\"\" method=\"post\">";
             while ($row = $result->fetch_assoc()){
                echo "<input name=\"userid\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
-            //   echo "<br />";
+               echo "<br />";
             //   echo "<input name=\"username\" type =\"text\" value=\"" . $row['username'] . "\">";
-            //   echo "<br />";
+              echo "<br />";
             //   echo "<input name=\"password\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
-            //   echo "<br />";
+              echo "<br />";
             //   echo "<input name=\"submit\" type=\"submit\" value=\"Change\">;
              }
             // echo "</form>";
