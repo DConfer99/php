@@ -24,7 +24,7 @@ echo "<form action=\"\" method=\"post\">";
                echo "<br />";
                echo "<input name=\"username\" type =\"text\" value=\"" . $row['username'] . "\">";
               echo "<br />";
-            //   echo "<input name=\"password\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
+              echo "<input name=\"password\" type =\"text\" disabled value=\"" . $row['password'] . "\">";
               echo "<br />";
             //   echo "<input name=\"submit\" type=\"submit\" value=\"Change\">;
              }
