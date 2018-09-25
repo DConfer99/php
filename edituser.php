@@ -11,12 +11,12 @@ if (!isset($_SESSION['username'])){
 }
 
 
-// if (isset($_GET['id']) && $_GET['edit']=="edit"){
-//   //bring in database connection
-//   require('dbconnection.php');
+if (isset($_GET['id']) && $_GET['edit']=="edit"){
+  //bring in database connection
+  require('dbconnection.php');
 //
-//   $sql = "SELECT * from users where user_id=" . $_GET['id']; //id is an int datatype, doesn't require quotes
-//   $result=$conn=>query($sql);
+  $sql = "SELECT * from users where user_id=" . $_GET['id']; //id is an int datatype, doesn't require quotes
+  $result=$conn=>query($sql);
 //
 // echo "<form action=\"\" method=\"post\">";
 //             while ($row = $result->fetch_assoc()){
@@ -29,9 +29,9 @@ if (!isset($_SESSION['username'])){
 //               echo "<input name=\"submit\" type=\"submit\" value=\"Change\">;
 //             }
 //             echo "</form>";
-// } else {
-//
-//   echo "You should not be here.";
-// }
+} else {
+
+  echo "You should not be here.";
+}
 
 ?>
