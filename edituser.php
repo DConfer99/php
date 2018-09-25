@@ -22,7 +22,7 @@ echo "<form action=\"\" method=\"post\">";
             while ($row = $result->fetch_assoc()){
                echo "<input name=\"userid\" type =\"text\" disabled value=\"" . $row['user_id'] . "\">";
                echo "<br />";
-            //   echo "<input name=\"username\" type =\"text\" value=\"" . $row['username'] . "\">";
+               echo "<input name=\"username\" type =\"text\" value=\"" . $row['username'] . "\">";
               echo "<br />";
             //   echo "<input name=\"password\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
               echo "<br />";
