@@ -28,7 +28,7 @@ echo "<form action=\"\" method=\"post\">";
               echo "<br />";
               echo "<input name=\"submit\" type=\"submit\" value=\"Change\">";
              }
-            // echo "</form>";
+            echo "</form>";
 } else {
 
   echo "You should not be here.";
