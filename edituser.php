@@ -18,11 +18,18 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
   $sql = "SELECT * from users where user_id=" . $_GET['id']; //id is an int datatype, doesn't require quotes
   $result=$conn=>query($sql);
 
-  echo "<form action=\"\" method=\"post\">";
+/*  echo "<form action=\"\" method=\"post\">";
             while ($row = $result->fetch_assoc()){
-              echo "<input type =\"text\" disabled value=\"" . $row['userid'] . "\">";
+              echo "<input name=\"userid\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
+              echo "<br />";
+              echo "<input name=\"username\" type =\"text\" value=\"" . $row['username'] . "\">";
+              echo "<br />";
+              echo "<input name=\"password\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
+              echo "<br />";
+              echo "<input name=\"submit\" type=\"submit\" value=\"Change\">;
             }
-
+            echo "</form>";
+*/
 } else{
 
   echo "You should not be here.";
