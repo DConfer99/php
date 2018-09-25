@@ -18,7 +18,7 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
   $sql = "SELECT * from users where user_id=" . $_GET['id']; //id is an int datatype, doesn't require quotes
   $result=$conn=>query($sql);
 
-echo "<form action=\"\" method=\"post\">";
+// echo "<form action=\"\" method=\"post\">";
 //             while ($row = $result->fetch_assoc()){
 //               echo "<input name=\"userid\" type =\"text\" disabled value=\"" . $row['userid'] . "\">";
 //               echo "<br />";
