@@ -36,6 +36,7 @@ echo "<form action=\"\" method=\"post\">";
 
 
 if (isset($_POST['username']) && $_POST['submit']=="Change"){
+  echo "hello";
   $sql = "UPDATE users set username =" . $_POST['username'] . "where user_id =" . $_GET['id'] . ";";
   $conn->query($sql);
 }
