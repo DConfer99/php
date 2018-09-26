@@ -24,7 +24,7 @@ echo "<form action=\"\" method=\"post\">";
                echo "<br />";
                echo "<input name=\"username\" type =\"text\" value=\"" . $row['username'] . "\">";
               echo "<br />";
-              echo "<input name=\"password\" type =\"text\" disabled value=\"" . $row['password'] . "\">";
+              echo "<input name=\"password\" type =\"text\" value=\"" . $row['password'] . "\">";
               echo "<br />";
               echo "<input name=\"submit\" type=\"submit\" value=\"Change\">";
              }
@@ -33,5 +33,11 @@ echo "<form action=\"\" method=\"post\">";
 
   echo "You should not be here.";
 }
+
+
+if (isset($_POST['username']) && $_POST['submit']=="Change"){
+  $sql = "UPDATE users set username =" . $_POST['name'] . "where user_id =" . $_GET['id'] . ";";
+}
+
 
 ?>
