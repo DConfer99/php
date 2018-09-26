@@ -35,11 +35,14 @@ echo "<form action=\"\" method=\"post\">";
 }
 
 if (isset($_POST['username']) && $_POST['submit']=="Change"){
-  echo $_POST['username'];
-  echo $_GET['id'];
   $sql = "UPDATE users set username =\"" . $_POST['username'] . "\" where user_id =" . $_GET['id'] . ";";
   $conn->query($sql);
 }
 
+if (isset($_POST['password']) && $_POST['submit']=="Change"){
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+  $sql = "UPDATE users set password=\"" . $password . "\" where user_id=" . $_GET['id'] . ";";
+  $conn->query($sql);
+}
 
 ?>
