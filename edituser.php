@@ -40,9 +40,7 @@ if (isset($_POST['username']) && $_POST['submit']=="Change"){
 }
 
 if (isset($_POST['password']) && $_POST['submit']=="Change"){
-  echo $_POST['password'];
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-  echo $password;
   $sql = "UPDATE users set password=\"" . $password . "\" where user_id=" . $_GET['id'] . ";";
   $conn->query($sql);
 }
