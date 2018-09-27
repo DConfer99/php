@@ -18,6 +18,16 @@ if (isset($_GET['id']) && $_GET['edit']=="Edit"){
   $sql = "SELECT * from users where user_id=" . $_GET['id'] . ";"; //id is an int datatype, doesn't require quotes
   $result = $conn->query($sql);
 
+  // checks for post information
+  if (isset($_POST['username']) && isset($_POST['password']) && $_POST['submit']=="Change"){
+    $sql = "UPDATE users set username =\"" . $_POST['username'] . "\" where user_id =" . $_GET['id'] . ";";
+    $conn->query($sql);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $sql = "UPDATE users set password=\"" . $password . "\" where user_id=" . $_GET['id'] . ";";
+    $conn->query($sql);
+    header('Location: users.php');
+  }
+
 echo "<form action=\"\" method=\"post\">";
             while ($row = $result->fetch_assoc()){
                echo "<input name=\"userid\" type =\"text\" disabled value=\"" . $row['user_id'] . "\">";
@@ -34,15 +44,6 @@ echo "<form action=\"\" method=\"post\">";
   echo "You should not be here.";
 }
 
-if (isset($_POST['username']) && $_POST['submit']=="Change"){
-  $sql = "UPDATE users set username =\"" . $_POST['username'] . "\" where user_id =" . $_GET['id'] . ";";
-  $conn->query($sql);
-}
 
-if (isset($_POST['password']) && $_POST['submit']=="Change"){
-  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-  $sql = "UPDATE users set password=\"" . $password . "\" where user_id=" . $_GET['id'] . ";";
-  $conn->query($sql);
-}
 
 ?>
