@@ -9,6 +9,11 @@
    $sql="INSERT INTO users (username, password) VALUES ('$username', '$password')";
    $conn->query($sql);
  }
+
+if(isset($_POST['password'])){
+  header ("Location: login.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -19,8 +24,8 @@
   <body>
     <p>Register Here</p>
     <form method="post" action="">
-      <input type="text" name="username"><br />
-      <input type="password" name="password"><br />
+      <input type="text" name="username" placeholder="Enter Your Username"><br />
+      <input type="password" name="password" placeholder="Enter a Password"><br />
       <input type="submit">
     </form>
 

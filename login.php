@@ -60,6 +60,7 @@ if (isset($_POST['logout'])){
       <input type="text" name="username" placeholder="Enter Username"><br />
       <input type="password" name="password" placeholder="Enter Password">
       <br />
+      <br />
       <input type="submit" value="Login"><br />
       <input type="submit" name="logout" value="Logout">
     </form>
