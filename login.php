@@ -32,18 +32,27 @@ if (isset($_POST['logout'])){
 
   <body>
 
-    <a href="register.php">Register Here</a>
+    <!--<a href="register.php">Register Here</a>-->
 
     <?php
-    if (isset($_SESSION['username'])){
-        echo "<a href=\"upload.php\"> | Upload an Image</a>";
+    // if (isset($_SESSION['username'])){
+    //     echo "<a href=\"upload.php\"> | Upload an Image</a>";
+    //
+    // }
+    //
+    // if (isset($_SESSION['username'])){
+    //     echo "<a href=\"users.php\"> | View Site Users</a>";
+    //
+    // }
+    echo "<a href=\"login.php\">Login/Logout</a>";
+    echo "<a href=\"register.php\"> | Register</a>";
 
+    if (isset($_SESSION['username'])){
+      echo "<a href=\"upload.php\"> | Upload an Image</a>";
+      echo "<a href=\"users.php\"> | View Site Users<a/>";
     }
 
-    if (isset($_SESSION['username'])){
-        echo "<a href=\"users.php\"> | View Site Users</a>";
-
-    }
+    echo "<hr />";
      ?>
 
     <form method="post" action="">
@@ -54,7 +63,7 @@ if (isset($_POST['logout'])){
       <input type="submit" name="logout" value="Logout">
     </form>
     <br />
-
+    <hr />
 <?php
 echo "Logged in as: " . $_SESSION['username'];
  ?>
