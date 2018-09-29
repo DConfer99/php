@@ -9,6 +9,7 @@ if (!isset($_SESSION['username'])){
 }
 
 echo "<a href=\"login.php\">Login/Logout</a>";
+echo "<a href=\"register.php\"> | Register</a>";
 echo "<a href=\"upload.php\"> | Upload an Image</a>";
 echo "<a href=\"users.php\"> | View Site Users<a/>";
 
@@ -90,3 +91,8 @@ switch($file_type){
  <h5 style="color:red;">
    <?php if ($ret){echo $ret;} ?>
  </h5>
+ <br />
+
+<?php
+echo "Logged in as $_SESSION['username']";
+?>
