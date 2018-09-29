@@ -8,6 +8,7 @@ if (!isset($_SESSION['username'])){
   header("Location: login.php");
 }
 
+echo "<a href=\"login.php\">Log In or Log Out</a>";
 echo "<a href=\"upload.php\">Upload an Image</a>";
 echo "<a href=\"users.php\"> | View Site Users<a/>";
 
@@ -78,6 +79,8 @@ switch($file_type){
  ?>
 
  Upload your file:
+ <br />
+ <br />
  <form action="" method="post" enctype="multipart/form-data"> <!--need enctype for uploading files-->
    <input type="file" name="upload">
    <br />
