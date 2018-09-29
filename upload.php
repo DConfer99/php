@@ -8,10 +8,13 @@ if (!isset($_SESSION['username'])){
   header("Location: login.php");
 }
 
-var_dump($_POST['upload']);
-echo "<hr />";
-var_dump($_FILES['upload']);
-echo "<hr />";
+echo "<a href=\"upload.php\">Upload an Image</a>";
+echo "<a href=\"users.php\"> | View Site Users<a/>";
+
+// var_dump($_POST['upload']);
+// echo "<hr />";
+// var_dump($_FILES['upload']);
+// echo "<hr />";
 
 if (isset($_FILES['upload'])) {
   //check to see if uploads folder file_exists

@@ -36,12 +36,12 @@ if (isset($_POST['logout'])){
 
     <?php
     if (isset($_SESSION['username'])){
-        echo "<a href=\"upload.php\"> | Upload</a>";
+        echo "<a href=\"upload.php\"> | Upload an Image</a>";
 
     }
 
     if (isset($_SESSION['username'])){
-        echo "<a href=\"users.php\"> | Users</a>";
+        echo "<a href=\"users.php\"> | View Site Users</a>";
 
     }
      ?>

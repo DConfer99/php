@@ -4,7 +4,7 @@ if (!isset($_SESSION)){
   session_start();
 }
 
-//makes sure user is loggeed in, if not, sends them to login page
+//makes sure user is logged in, if not, sends them to login page
 if (!isset($_SESSION['username'])){
   //die("DONTCHU DO IT.");
   header("Location: login.php");
