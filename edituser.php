@@ -10,6 +10,12 @@ if (!isset($_SESSION['username'])){
   header("Location: login.php");
 }
 
+echo "<a href=\"login.php\">Login/Logout</a>";
+echo "<a href=\"register.php\"> | Register</a>";
+echo "<a href=\"upload.php\"> | Upload an Image</a>";
+echo "<a href=\"users.php\"> | View Site Users<a/>";
+echo "<hr />";
+echo "<br />";
 
 if (isset($_GET['id']) && $_GET['edit']=="Edit"){
   //bring in database connection
@@ -43,7 +49,7 @@ echo "<form action=\"\" method=\"post\">";
 
   echo "You should not be here.";
 }
-
-
-
+echo "<br />";
+echo "<hr />";
+echo "Logged in as: " . $_SESSION['username'];
 ?>
