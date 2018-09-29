@@ -1,4 +1,9 @@
 <?php
+
+if(isset($_POST['password'])){
+  header ("Location: login.php");
+}
+
  //won't contact database when page first loads
  //checks if someone has sent post data
  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -10,9 +15,7 @@
    $conn->query($sql);
  }
 
-if(isset($_POST['password'])){
-  header ("Location: login.php");
-}
+
 
 ?>
 <!DOCTYPE html>
