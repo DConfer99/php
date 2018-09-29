@@ -42,7 +42,7 @@ echo "<form action=\"\" method=\"post\">";
               echo "<br />";
               echo "<input name=\"password\" type =\"text\" value=\"" . $row['password'] . "\">";
               echo "<br />";
-              echo "<br />"
+              echo "<br />";
               echo "<input name=\"submit\" type=\"submit\" value=\"Change\">";
              }
             echo "</form>";
