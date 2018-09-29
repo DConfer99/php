@@ -11,6 +11,12 @@ if (!isset($_SESSION['username'])){
   header("Location: login.php");
 }
 
+echo "<a href=\"login.php\">Login/Logout</a>";
+echo "<a href=\"register.php\"> | Register</a>";
+echo "<a href=\"upload.php\"> | Upload an Image</a>";
+echo "<a href=\"users.php\"> | View Site Users<a/>";
+echo "<hr />";
+
 //bring in database connection
 require('dbconnection.php');
 
@@ -74,5 +80,10 @@ $conn->close();
         ?>
 
      </table>
+     <br />
+     <hr />
+    <?php
+    echo "Logged in as: " . $_SESSION['username'];
+    ?>
    </body>
  </html>
