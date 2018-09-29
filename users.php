@@ -16,6 +16,7 @@ echo "<a href=\"register.php\"> | Register</a>";
 echo "<a href=\"upload.php\"> | Upload an Image</a>";
 echo "<a href=\"users.php\"> | View Site Users<a/>";
 echo "<hr />";
+echo "<br />";
 
 //bring in database connection
 require('dbconnection.php');
