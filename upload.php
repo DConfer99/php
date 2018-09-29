@@ -77,10 +77,10 @@ switch($file_type){
   }
 }
  ?>
-
+ 
+ <br />
+ <br />
  Upload your file:
- <br />
- <br />
  <form action="" method="post" enctype="multipart/form-data"> <!--need enctype for uploading files-->
    <input type="file" name="upload">
    <br />
