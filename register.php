@@ -1,5 +1,9 @@
 <?php
 
+ if (!isset($_SESSION)){
+   session_start();
+ }
+ 
  //won't contact database when page first loads
  //checks if someone has sent post data
  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
