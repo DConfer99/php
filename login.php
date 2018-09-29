@@ -53,6 +53,7 @@ if (isset($_POST['logout'])){
     }
 
     echo "<hr />";
+    echo "<br />";
      ?>
 
     <form method="post" action="">
