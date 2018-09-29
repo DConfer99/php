@@ -8,8 +8,8 @@ if (!isset($_SESSION['username'])){
   header("Location: login.php");
 }
 
-echo "<a href=\"login.php\">Log In or Log Out</a>";
-echo "<a href=\"upload.php\">Upload an Image</a>";
+echo "<a href=\"login.php\">Login/Logout</a>";
+echo "<a href=\"upload.php\"> | Upload an Image</a>";
 echo "<a href=\"users.php\"> | View Site Users<a/>";
 
 // var_dump($_POST['upload']);
@@ -77,7 +77,7 @@ switch($file_type){
   }
 }
  ?>
- 
+
  <br />
  <br />
  Upload your file:
