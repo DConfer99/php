@@ -12,7 +12,7 @@ echo "<a href=\"login.php\">Login/Logout</a>";
 echo "<a href=\"register.php\"> | Register</a>";
 echo "<a href=\"upload.php\"> | Upload an Image</a>";
 echo "<a href=\"users.php\"> | View Site Users<a/>";
-echo "<hr />"
+echo "<hr />";
 // var_dump($_POST['upload']);
 // echo "<hr />";
 // var_dump($_FILES['upload']);
@@ -92,7 +92,7 @@ switch($file_type){
    <?php if ($ret){echo $ret;} ?>
  </h5>
  <br />
-
+ <hr />
 <?php
 echo "Logged in as: " . $_SESSION['username'];
 ?>
