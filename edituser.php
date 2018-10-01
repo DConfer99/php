@@ -10,10 +10,11 @@ if (!isset($_SESSION['username'])){
   header("Location: login.php");
 }
 
-echo "<a href=\"login.php\">Login/Logout</a>";
-echo "<a href=\"register.php\"> | Register</a>";
-echo "<a href=\"upload.php\"> | Upload an Image</a>";
-echo "<a href=\"users.php\"> | View Site Users<a/>";
+// echo "<a href=\"login.php\">Login/Logout</a>";
+// echo "<a href=\"register.php\"> | Register</a>";
+// echo "<a href=\"upload.php\"> | Upload an Image</a>";
+// echo "<a href=\"users.php\"> | View Site Users<a/>";
+require('navbar.php');
 echo "<hr />";
 echo "<br />";
 
@@ -52,6 +53,7 @@ echo "<form action=\"\" method=\"post\">";
 }
 echo "<br />";
 echo "<hr />";
+
 if (isset($_SESSION['username'])){
   echo "Logged in as: " . $_SESSION['username'];
 }

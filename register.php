@@ -19,14 +19,15 @@
    header ("Location: login.php");
  }
 
- echo "<a href=\"login.php\">Login/Logout</a>";
- echo "<a href=\"register.php\"> | Register</a>";
+ // echo "<a href=\"login.php\">Login/Logout</a>";
+ // echo "<a href=\"register.php\"> | Register</a>";
+ //
+ // if(isset($_SESSION['username'])){
+ //   echo "<a href=\"upload.php\"> | Upload an Image</a>";
+ //   echo "<a href=\"users.php\"> | View Site Users<a/>";
+ // }
 
- if(isset($_SESSION['username'])){
-   echo "<a href=\"upload.php\"> | Upload an Image</a>";
-   echo "<a href=\"users.php\"> | View Site Users<a/>";
- }
-
+require('navbar.php');
  echo "<hr />";
  echo "<br />";
 ?>
