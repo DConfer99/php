@@ -44,13 +44,17 @@ if (isset($_POST['logout'])){
     //     echo "<a href=\"users.php\"> | View Site Users</a>";
     //
     // }
-    echo "<a href=\"login.php\">Login/Logout</a>";
-    echo "<a href=\"register.php\"> | Register</a>";
 
-    if (isset($_SESSION['username'])){
-      echo "<a href=\"upload.php\"> | Upload an Image</a>";
-      echo "<a href=\"users.php\"> | View Site Users<a/>";
-    }
+    // echo "<a href=\"login.php\">Login/Logout</a>";
+    // echo "<a href=\"register.php\"> | Register</a>";
+    //
+    // if (isset($_SESSION['username'])){
+    //   echo "<a href=\"upload.php\"> | Upload an Image</a>";
+    //   echo "<a href=\"users.php\"> | View Site Users<a/>";
+    // }
+
+    //brings in content from navbar page
+    require('navbar.php');
 
     echo "<hr />";
     echo "<br />";
