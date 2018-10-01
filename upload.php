@@ -78,7 +78,6 @@ switch($file_type){
   }
 }
  ?>
-
  <br />
  <br />
  Upload your file:

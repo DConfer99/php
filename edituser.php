@@ -52,5 +52,7 @@ echo "<form action=\"\" method=\"post\">";
 }
 echo "<br />";
 echo "<hr />";
-echo "Logged in as: " . $_SESSION['username'];
+if (isset($_SESSION['username'])){
+  echo "Logged in as: " . $_SESSION['username'];
+}
 ?>
