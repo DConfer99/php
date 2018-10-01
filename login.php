@@ -67,7 +67,9 @@ if (isset($_POST['logout'])){
     <br />
     <hr />
 <?php
-echo "Logged in as: " . $_SESSION['username'];
+if(isset($_SESSION['username'])){
+  echo "Logged in as: " . $_SESSION['username'];
+}
  ?>
   </body>
 </html>
