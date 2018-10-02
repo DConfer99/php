@@ -8,8 +8,23 @@
  //checks if someone has sent post data
  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
    require('dbconnection.php');
-   $username = $_POST['username']; //looks for username in post
-   $password = $_POST['password']; //looks for password in post
+
+   $username = $_POST['username']; //looks for username in post, potentialy dangerous (XSS, SQL Injection)
+
+   // sanitize username- strips tags
+   $username = filter_var($username, FILTER_SANITIZE_STRING);
+
+   // trim any white space
+   $username = trim($username); //trims left and right, not in the middle
+
+   //remove slashes, no / allowed
+   $username = stripslashes($username);
+
+   //first parameter is string to look for, second is what to replace it with
+    $username = str_replace(' ','',$username);
+
+   $password = $_POST['password']; //looks for password in post, password will be hashed, no need to sanitize
+
    $password = password_hash($password, PASSWORD_BCRYPT); //works with PHP 5.5 and higher
    $sql="INSERT INTO users (username, password) VALUES ('$username', '$password')";
    $conn->query($sql);
