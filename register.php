@@ -17,11 +17,15 @@
    // trim any white space
    $username = trim($username); //trims left and right, not in the middle
 
-   //remove slashes, no / allowed
-   $username = stripslashes($username);
-
+   //remove slashes, no / allowed, working wierd
+   //$username = stripslashes($username);
+   $username = str_replace('/','',$username);
+   $username = str_replace('\\','',$username);
    //first parameter is string to look for, second is what to replace it with
-    $username = str_replace(' ','',$username);
+    //$username = str_replace(' ','',$username);
+
+    //remove tabs and all other white space
+    $username=preg_replace("/\s+/","",$username);
 
    $password = $_POST['password']; //looks for password in post, password will be hashed, no need to sanitize
 
