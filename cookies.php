@@ -1,7 +1,7 @@
 <?php
 $cookie_name = "user";
 $cookie_value = "bob";
-// 86400 is number of secinds in a day
+
  ?>
 
  <!DOCTYPE html>
@@ -17,7 +17,9 @@ $cookie_value = "bob";
         }
         else {
             echo "This is your first time here!";
-            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+            //setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+            // 86400 is number of secinds in a day
+            setcookie($cookie_name, $cookie_value, time() + (60), "/");
         }
       ?>
    </body>
