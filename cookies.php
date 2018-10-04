@@ -1,7 +1,6 @@
 <?php
 $cookie_name = "user";
 $cookie_value = "bob";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 // 86400 is number of secinds in a day
  ?>
 
