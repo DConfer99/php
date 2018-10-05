@@ -17,9 +17,11 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
      <title></title>
    </head>
    <body>
+     <h1>Welcome to the cookies page!</h1>
+     <p>Contrary to popular belief, you won't actually get a REAL cookie.<br />We just really like storing files on your computer.</p>
+     <br />
      <?php
-        echo $_COOKIE['lastVisitDate'];
-        echo $_COOKIE['lastVisitTime'];
+        echo "You last visited this page on " . $_COOKIE['lastVisitDate'] . " at " . $_COOKIE['lastVisitTime'];
       ?>
    </body>
  </html>
