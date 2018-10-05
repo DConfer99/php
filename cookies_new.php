@@ -1,12 +1,12 @@
 <?php
 //set cookie for the date the site was visited last
 $cookie_name = "lastVisitDate";
-$cookie_value = date("m/d/Y");
+$cookie_value = date("F j, Y");
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
 
 //set cookie for the time the site was visited last
 $cookie_name = "lastVisitTime";
-$cookie_value = date("h:i a");
+$cookie_value = date("g:i A");
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
  ?>
 
