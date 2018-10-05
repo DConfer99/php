@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set("America/New_York");
+
 //set cookie for the date the site was visited last
 $cookie_name = "lastVisitDate";
 $cookie_value = date("F j, Y");
