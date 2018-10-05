@@ -1,4 +1,5 @@
-<?php
+<?
+//sets time zone used for page
 date_default_timezone_set("America/New_York");
 
 //set cookie for the date the site was visited last
