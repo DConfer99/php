@@ -23,10 +23,11 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
      if(isset($_COOKIE['lastVisitDateTime'])){
        echo "You last visited this page on " . date("F j, Y", $_COOKIE['lastVisitDateTime']) . " at " . date("g:i A", $_COOKIE['lastVisitDateTime']) . ".";
        echo "<br />";
+       echo "<br />";
 
        $currentTime = mktime();
        $secondsPassed = $currentTime - $_COOKIE['lastVisitDateTime'];
-       echo $secondsPassed;
+       echo "Why, that was a whole " . $secondsPassed . " seconds ago!";
      }
     echo "<br />";
     echo "<br />";
