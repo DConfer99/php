@@ -28,11 +28,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
      if(isset($_COOKIE['lastVisitDate']) && isset($_COOKIE['lastVisitTime'])){
        echo "You last visited this page on " . $_COOKIE['lastVisitDate'] . " at " . $_COOKIE['lastVisitTime'] . ".";
        echo "<br />";
-       $lastVisitDate = $_COOKIE['lastVisitDate'];
-       $currentDate = date("F j, Y");
-       $timeBetween = date_diff($lastVisitDate, $currentDate);
-       $timeBetweenSeconds = $timeBetween->format("s");
-       echo $timeBetweenSeconds;
      }
     echo "<br />";
     echo "<br />";
