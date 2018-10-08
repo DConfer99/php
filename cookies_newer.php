@@ -2,7 +2,7 @@
 //sets time zone for page
 date_default_timezone_set("America/New_York");
 
-//set cookie for the date the site was visited last
+//set cookie for the date and time the site was visited last
 $cookie_name = "lastVisitDateTime";
 $cookie_value = mktime();
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
@@ -23,6 +23,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
      if(isset($_COOKIE['lastVisitDateTime'])){
        echo "You last visited this page on " . date("F j, Y", $_COOKIE['lastVisitDateTime']) . " at " . date("g:i A", $_COOKIE['lastVisitDateTime']) . ".";
        echo "<br />";
+
+       $currentTime = mktime();
+       $secondsPassed = $currentTime - $_COOKIE['lastVisitDateTime'];
+       echo $secondsPassed;
      }
     echo "<br />";
     echo "<br />";
