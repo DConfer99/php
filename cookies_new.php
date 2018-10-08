@@ -29,8 +29,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
        echo "You last visited this page on " . $_COOKIE['lastVisitDate'] . " at " . $_COOKIE['lastVisitTime'] . ".";
      }
 
-     echo "<img src=\"images/Cookies-PNG-Photos.png\">"
+     echo "<img src=\"images/Cookies-PNG-Photos.png\" width=100px>"
       ?>
-      
+
    </body>
  </html>
