@@ -3,13 +3,8 @@
 date_default_timezone_set("America/New_York");
 
 //set cookie for the date the site was visited last
-$cookie_name = "lastVisitDate";
-$cookie_value = date("F j, Y");
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
-
-//set cookie for the time the site was visited last
-$cookie_name = "lastVisitTime";
-$cookie_value = date("g:i A");
+$cookie_name = "lastVisitDateTime";
+$cookie_value = mktime();
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
  ?>
 
@@ -25,11 +20,9 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
      <br />
 
      <?php
-     if(isset($_COOKIE['lastVisitDate']) && isset($_COOKIE['lastVisitTime'])){
-       echo "You last visited this page on " . $_COOKIE['lastVisitDate'] . " at " . $_COOKIE['lastVisitTime'] . ".";
+     if(isset($_COOKIE['lastVisitDateTime'])){
+       echo "You last visited this page on " . date("F j, Y", $_COOKIE['lastVisitDateTime']) . " at " . date("g:i A", $_COOKIE['lastVisitDateTime']) . ".";
        echo "<br />";
-       $currentTime = mktime();
-       echo $currentTime;
      }
     echo "<br />";
     echo "<br />";
