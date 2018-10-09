@@ -30,7 +30,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
        $secondsPassed = $currentTime - $_COOKIE['lastVisitDateTime'];
        echo "Why, that was a whole " . $secondsPassed . " seconds ago!";
      }
-     echo $seconds->format('%a days, %h hours, %i minutes and %s seconds');
+
     echo "<br />";
     echo "<br />";
      echo "<img src=\"images/Cookies-PNG-Photos.png\" width=300px>";
