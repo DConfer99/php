@@ -1,7 +1,7 @@
 <?php
 //sets time zone for page
 date_default_timezone_set("America/New_York");
-//extra comment
+//extra comment: the reckoning
 //set cookie containing timestamp for time/date site was last accessed
 $cookie_name = "lastVisitDateTime";
 $cookie_value = mktime();
