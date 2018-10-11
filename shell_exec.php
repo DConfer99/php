@@ -27,5 +27,5 @@ if ($file_test){
 echo "<br />";
 echo "<br />";
 $users = shell_exec('who');
-echo $users;
+echo "<pre>$users</pre>";
 ?>
