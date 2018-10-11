@@ -15,7 +15,11 @@ if ($file_test){
   echo "Here's what's in it: ";
   echo "<br />";
   $testArray = scandir("test/");
-  var_dump($testArray);
+  //var_dump($testArray);
+  foreach ($testArray as $fileName => $value) {
+    if ($value == "." || $value == ".."){continue;}
+    echo $value . "<br />";
+  }
 }else{
   echo "Directory doesn't exist!";
 }
