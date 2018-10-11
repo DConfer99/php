@@ -23,4 +23,9 @@ if ($file_test){
 }else{
   echo "Directory doesn't exist!";
 }
+
+echo "<br />";
+echo "<br />";
+$users = shell_exec('who');
+echo $users;
 ?>
