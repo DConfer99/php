@@ -27,7 +27,7 @@ if ($file_test){
 echo "<br />";
 echo "<br />";
 $users = shell_exec('who');
-$usersArray = explode(" ",$users);
+$usersArray = explode("\n",$users);
 echo $usersArray[0];
 echo "<br />";
 echo "<pre>$users</pre>";
