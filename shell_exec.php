@@ -28,7 +28,12 @@ echo "<br />";
 echo "<br />";
 $users = shell_exec('who');
 $usersArray = explode("\n",$users);
-echo $usersArray[0];
-echo "<br />";
-echo "<pre>$users</pre>";
+foreach ($ussersArray as $key => $value) {
+  if ($key = "0" || $key = "1"){continue;}
+  $username = substr($value, 0, strpos($value, ' '));
+  echo $username . "<br />";
+}
+// echo $usersArray[0];
+// echo "<br />";
+// echo "<pre>$users</pre>";
 ?>
