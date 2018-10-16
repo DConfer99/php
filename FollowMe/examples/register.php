@@ -1,3 +1,12 @@
+<?php
+if (!isset($_SESSION)){
+	session_start();
+}
+
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+ ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -93,7 +102,7 @@
 
 
                                 </div>
-                                <form class="register-form" method="get" action="">
+                                <form class="register-form" method="post" action="">
                                     <label>Email</label>
                                     <input type="text" name="email" class="form-control" placeholder="Email">
 
@@ -107,8 +116,12 @@
                             </div>
                         </div>
                     </div>
-
-
+<?php
+$email = $_POST['email'];
+$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
+$conn->query($sql);
+?>
 
 
 					<div class="footer register-footer text-center">
