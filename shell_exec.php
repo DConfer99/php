@@ -26,7 +26,7 @@ if ($file_test){
 
 echo "<br />";
 echo "<br />";
-$users = shell_exec('who');
+$users = shell_exec('w');
 $usersArray = explode("\n",$users);
 foreach ($usersArray as $key => $value) {
   if ($key = "0" || $key = "1"){continue;}
