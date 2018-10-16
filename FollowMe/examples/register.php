@@ -117,10 +117,12 @@ $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
                         </div>
                     </div>
 <?php
-$email = $_POST['email'];
-$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
-$conn->query($sql);
+if (isset($_POST['email']) && isset($_POST['password'])){
+	$email = $_POST['email'];
+	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+	$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
+	$conn->query($sql);
+}
 ?>
 
 
