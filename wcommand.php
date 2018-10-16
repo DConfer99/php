@@ -19,7 +19,8 @@ foreach ($linesArray as $key => $value) {
 //substr() is used to extract username from line
 //strpos() finds the first instance of a space in the line and report location- used in substr() to find cutoff
 echo $value;
-  $userName = substr($value, 0, strpos($value, ' '));
+  //$userName = substr($value, 0, strpos($value, ' '));
+  $userName = substr($value, 0, 6);
   echo $userName . "<br />";
 }
  ?>
