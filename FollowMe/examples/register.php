@@ -122,8 +122,9 @@ if ($_POST['email'] != "" && $_POST['password'] != ""){
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
 	$conn->query($sql);
-	header ("Location: FollowMe/examples/login.php");
+
 }
+header ("Location: login.php");
 ?>
 
 
