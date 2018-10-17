@@ -117,10 +117,7 @@ $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
                         </div>
                     </div>
 <?php
-echo "hello";
-echo $_POST['email'];
-echo $_POST['password'];
-if (isset($_POST['email']) && isset($_POST['password'])){
+if ($_POST['email'] != "" && $_POST['password'] != ""){
 	$email = $_POST['email'];
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
