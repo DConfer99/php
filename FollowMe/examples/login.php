@@ -3,18 +3,18 @@ if (!isset($_SESSION)){ session_start(); }
 
 if($_POST['email'] != "" && $_POST['password'] != ""){
 
-	$email=$_POST['email'];
-	$password=$_POST['password'];
-
-	$sql="SELECT email_addr, password FROM fm_users WHERE email_addr = '$email'";
-	$result=$conn->query($sql);
-
-	while ($row = $result->fetch_assoc()){
-		if (password_verify($password, $row['password'])){
-			$_SESSION['email'] = $email;
-			header("Location: profile.php");
-		}
-	}
+	// $email=$_POST['email'];
+	// $password=$_POST['password'];
+	//
+	// $sql="SELECT email_addr, password FROM fm_users WHERE email_addr = '$email'";
+	// $result=$conn->query($sql);
+	//
+	// while ($row = $result->fetch_assoc()){
+	// 	if (password_verify($password, $row['password'])){
+	// 		$_SESSION['email'] = $email;
+	// 		header("Location: profile.php");
+	// 	}
+	// }
 }
  ?>
 
