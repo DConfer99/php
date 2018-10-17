@@ -3,10 +3,11 @@ if (!isset($_SESSION)){
 	session_start();
 }
 
+if ($_POST['email'] != "" && $_POST['password'] != "")
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-
-if ($_POST['email'] != "" && $_POST['password'] != ""){
-	header ("Location: login.php");
+$email = $_POST['email'];
+$password = $_POST['password'];
+$sql = "SELECT username, "
 }
  ?>
 
@@ -89,7 +90,7 @@ if ($_POST['email'] != "" && $_POST['password'] != ""){
             <div class="filter"></div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 ml-auto mr-auto">
+                        <div class="col-lg-6 ml-auto mr-auto">
                             <div class="card card-register">
 															  <h3 class="title">Hey there friendo!</h3>
                                 <h3 class="title">Enter your credentials here:</h3>
@@ -107,16 +108,6 @@ if ($_POST['email'] != "" && $_POST['password'] != ""){
                             </div>
                         </div>
                     </div>
-<?php
-if ($_POST['email'] != "" && $_POST['password'] != ""){
-	$email = $_POST['email'];
-	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-	$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
-	$conn->query($sql);
-}
-?>
-
-
 					<div class="footer register-footer text-center">
 						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
 					</div>
