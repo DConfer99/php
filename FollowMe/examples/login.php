@@ -14,7 +14,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 	// 		$_SESSION['email'] = $email;
 	// 		header("Location: profile.php");
 	// 	}
-	}
+	// }
 }
  ?>
 
