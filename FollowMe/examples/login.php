@@ -6,7 +6,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 	$email=$_POST['email'];
 	$password=$_POST['password'];
 
-	$sql="SELECT email_addr, password FROM fm_users WHERE email_addr = '$email'";
+	$sql="SELECT email_addr, password FROM fm_users WHERE email_addr = \"$email\"";
 	$result=$conn->query($sql);
 
 	// while ($row = $result->fetch_assoc()){
