@@ -1,5 +1,6 @@
 <?php
 if (!isset($_SESSION)){ session_start(); }
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 
 if($_POST['email'] != "" && $_POST['password'] != ""){
 
