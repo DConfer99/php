@@ -6,7 +6,7 @@ if (!isset($_SESSION)){
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 
 if ($_POST['email'] != "" && $_POST['password'] != ""){
-
+	header ("Location: login.php");
 }
  ?>
 
@@ -126,7 +126,6 @@ if ($_POST['email'] != "" && $_POST['password'] != ""){
 	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$sql = "INSERT INTO fm_users (email_addr, password) VALUES ('$email', '$password')";
 	$conn->query($sql);
-	header ("Location: login.php");
 }
 ?>
 
