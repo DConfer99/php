@@ -12,7 +12,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 	while ($row = $result->fetch_assoc()){
 		if (password_verify($password, $row['password'])){
 			$_SESSION['email'] = $email;
-			header("Location: profile.php")
+			header("Location: profile.php");
 		}
 	}
 }
