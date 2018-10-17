@@ -103,8 +103,7 @@ if ($_POST['email'] != "" && $_POST['password'] != ""){
 										<i class="fa fa-twitter"></i>
 									</a>
 
-
-
+<?php vardump($_POST); ?>
                                 </div>
                                 <form class="register-form" method="post" action="">
                                     <label>Email</label>
