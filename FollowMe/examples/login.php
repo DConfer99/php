@@ -91,7 +91,8 @@ if ($_POST['email'] != "" && $_POST['password'] != ""){
                     <div class="row">
                         <div class="col-lg-4 ml-auto mr-auto">
                             <div class="card card-register">
-                                <h3 class="title">Login</h3>
+															  <h3 class="title">Hey there friendo!</h3>
+                                <h3 class="title">Login Here:</h3>
                                 <form class="register-form" method="post" action="">
                                     <label>Email</label>
                                     <input type="text" name="email" class="form-control" placeholder="Email">
