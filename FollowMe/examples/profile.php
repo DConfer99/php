@@ -33,7 +33,7 @@
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="https://www.youtube.com/channel/UCqhC4CJNWTKPIDpeuqjqMng">PTG</a>
+	            <a class="navbar-brand" href="https://www.youtube.com/channel/UCqhC4CJNWTKPIDpeuqjqMng">PickledTeddiesGaming!</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
