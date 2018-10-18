@@ -17,8 +17,6 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 		}
 	}
 }
-
-echo "Here is you email: " . $_SESSION['email'];
  ?>
 
 

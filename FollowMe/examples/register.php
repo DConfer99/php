@@ -1,15 +1,13 @@
 <?php
-// if (!isset($_SESSION)){
-// 	session_start();
-// }
+if (!isset($_SESSION)){
+	session_start();
+}
 
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 
 if ($_POST['email'] != "" && $_POST['password'] != ""){
 	header ("Location: login.php");
 }
-
-echo "Here is you email: " . $_SESSION['email'];
  ?>
 
 
