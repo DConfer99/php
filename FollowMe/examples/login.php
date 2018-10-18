@@ -48,7 +48,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 </head>
 <body>
     <div class="wrapper">
-        <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
+        <div class="page-header" style="background-image: url('images/chem_plant.png');">
             <div class="filter"></div>
                 <div class="container">
                     <div class="row">
@@ -62,7 +62,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 
                                     <label>Password</label>
                                     <input type="password" name="password" class="form-control" placeholder="Password">
-                                    <button type="submit" class="btn btn-danger btn-block btn-round">Register</button>
+                                    <button type="submit" class="btn btn-danger btn-block btn-round">Log In</button>
                                 </form>
                                 <div class="forgot">
                                     <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
@@ -71,7 +71,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
                         </div>
                     </div>
 					<div class="footer register-footer text-center">
-						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, modified with <i class="fa fa-heart heart"></i> by Dillon Confer</h6>
 					</div>
                 </div>
         </div>
