@@ -65,7 +65,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
                                     <button type="submit" class="btn btn-danger btn-block btn-round">Log In</button>
                                 </form>
                                 <div class="forgot">
-                                    <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+                                    <a href="register.php" class="btn btn-link btn-danger">New here? Wanna join? Click here!</a>
                                 </div>
                             </div>
                         </div>
