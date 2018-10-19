@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
 	session_start();
 }
 //uses $_SESSION['email'] to display email in nav bar
-//modify fm_users to include avatar_url, first_name, last_name
+//modify fm_users to include avatar_url, first_name, last_name, title, description
  ?>
 
 <!doctype html>
