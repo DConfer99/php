@@ -7,7 +7,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 	$email=$_POST['email'];
 	$password=$_POST['password'];
 
-	$sql="SELECT password, avatar_url, first_name, last_name, title, description FROM fm_users WHERE email_addr = \"$email\"";
+	$sql="SELECT password, avatar_url, first_name, last_name, title, description, background_url FROM fm_users WHERE email_addr = \"$email\"";
 	$result=$conn->query($sql);
 
 	while ($row = $result->fetch_assoc()){
@@ -18,6 +18,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 			$_SESSION['last_name'] = $row['last_name'];
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
+			$_SESSION['background_url'] = $row['background_url']
 			header("Location: profile.php");
 		}
 	}
