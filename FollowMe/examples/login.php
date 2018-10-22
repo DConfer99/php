@@ -18,7 +18,7 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 			$_SESSION['last_name'] = $row['last_name'];
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
-			$_SESSION['background_url'] = $row['background_url']
+			$_SESSION['background_url'] = $row['background_url'];
 			header("Location: profile.php");
 		}
 	}
