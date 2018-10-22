@@ -62,7 +62,7 @@ if(!isset($_SESSION)){
     </nav>
 
     <div class="wrapper">
-        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('<?php echo $_SESSION['background_url'] ?>');">
+        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('<?php echo $_SESSION['background_url']; ?>');">
 			<div class="filter"></div>
 		</div>
         <div class="section profile-content">
