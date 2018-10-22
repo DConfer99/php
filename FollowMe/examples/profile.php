@@ -34,7 +34,6 @@ if(!isset($_SESSION)){
 
 </head>
 <body>
-	<?php echo $_SESSION['background_url']; ?>
     <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="150">
         <div class="container">
 			<div class="navbar-translate">
