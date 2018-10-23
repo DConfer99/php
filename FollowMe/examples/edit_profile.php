@@ -92,7 +92,7 @@ if(!isset($_SESSION)){
 														</div>
 												</div> <!--Ends first row-->
 
-												<label>Message</label>
+												<label>Description</label>
 												<textarea class="form-control" rows="4" placeholder="A little bit about you..."></textarea>
 												<div class="row">
 														<div class="col-md-4 ml-auto mr-auto">
