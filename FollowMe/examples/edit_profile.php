@@ -66,12 +66,12 @@ if(!isset($_SESSION)){
 		<div class="section landing-section">
 				<div class="container">
 						<div class="row">
-								<div class="col-md-8 ml-auto mr-auto">
+								<div class="col-md-8 ml-auto mr-auto"> <!--takes up 8 of 12 square, left and right margin auto adjust to center-->
 										<h2 class="text-center">A profile as unique as you!</h2>
 										<form class="contact-form" action="" method="post">
-												<div class="row">
+												<div class="row"> <!--row within row-->
 
-														<div class="col-md-6">
+														<div class="col-md-6"> <!--further dives takes up half of another 12-->
 																<label>First Name</label>
 																<div class="input-group">
 																	<span class="input-group-addon">
@@ -80,7 +80,7 @@ if(!isset($_SESSION)){
 																	<input type="text" class="form-control" placeholder="Name">
 															</div>
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6"> <!-- takes up other half -->
 
 																<label>Last Name</label>
 																	<div class="input-group">
@@ -91,6 +91,14 @@ if(!isset($_SESSION)){
 																	</div>
 														</div>
 												</div> <!--Ends first row-->
+
+												<label>Title</label>
+													<div class="input-group">
+													<span class="input-group-addon">
+																<i class="nc-icon nc-tag-content"></i>
+													</span>
+													<input type="text" class="form-control" placeholder="What are you?">
+													</div>
 
 												<label>Description</label>
 												<textarea class="form-control" rows="4" placeholder="A little bit about you..."></textarea>
