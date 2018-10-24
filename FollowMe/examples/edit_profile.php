@@ -4,6 +4,7 @@ if(!isset($_SESSION)){
 	session_start();
 }
 
+//runs if user pressed submit button
 if(isset($_POST['submit'])){
 	$email= $_SESSION['email'];
 	$first_name= $_POST['first_name'];
