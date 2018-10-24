@@ -6,7 +6,7 @@ if(!isset($_SESSION)){
 
 if(isset($_POST['submit'])){
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-	$sql = "update fm_users set first_name = \"$_POST['first_name']\", last_name = \"$_POST['lastname']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where email_addr = \"$_POST['email']\"";
+	// $sql = "update fm_users set first_name = \"$_POST['first_name']\", last_name = \"$_POST['lastname']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where email_addr = \"$_POST['email']\";
 	$conn->query($sql);
 	header("Location: profile.php");
 }
