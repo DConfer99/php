@@ -13,10 +13,18 @@ if(isset($_POST['submit'])){
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "update fm_users set first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
-	echo $sql;
-	//$conn->query($sql);
-	//header("Location: profile.php");
-}
+	$conn->query($sql);
+
+	$sql="SELECT first_name, last_name, title, description FROM fm_users WHERE email_addr = \"$email\"";
+	$result=$conn->query($sql);
+
+	while ($row = $result->fetch_assoc()){
+			$_SESSION['first_name'] = $row['first_name'];
+			$_SESSION['last_name'] = $row['last_name'];
+			$_SESSION['title'] = $row['title'];
+			$_SESSION['description'] = $row['description'];
+		}
+	header("Location: profile.php");
  ?>
 
 <!doctype html>
