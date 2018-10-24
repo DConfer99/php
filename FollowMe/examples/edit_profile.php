@@ -104,7 +104,7 @@ if(!isset($_SESSION)){
 												<textarea class="form-control" rows="4" placeholder="A little bit about you..."><?php echo $_SESSION['description'] ?></textarea>
 												<div class="row">
 														<div class="col-md-4 ml-auto mr-auto">
-																<button class="btn btn-danger btn-lg btn-fill">Update your Profile!</button>
+																<button class="btn btn-danger btn-lg btn-fill" type="submit">Update your Profile!</button>
 														</div>
 												</div>
 										</form>
