@@ -13,8 +13,9 @@ if(isset($_POST['submit'])){
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "update fm_users set first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
-	$conn->query($sql);
-	header("Location: profile.php");
+	echo $sql;
+	//$conn->query($sql);
+	//header("Location: profile.php");
 }
  ?>
 
