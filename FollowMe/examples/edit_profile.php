@@ -77,7 +77,7 @@ if(!isset($_SESSION)){
 																	<span class="input-group-addon">
 																			<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" class="form-control" placeholder="Name">
+																	<input type="text" class="form-control" placeholder="First Name">
 															</div>
 														</div>
 														<div class="col-md-6"> <!-- takes up other half -->
@@ -87,7 +87,7 @@ if(!isset($_SESSION)){
 																	<span class="input-group-addon">
 																				<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" class="form-control" placeholder="Email">
+																	<input type="text" class="form-control" placeholder="Last Name">
 																	</div>
 														</div>
 												</div> <!--Ends first row-->
