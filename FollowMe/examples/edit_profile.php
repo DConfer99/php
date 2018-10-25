@@ -101,7 +101,7 @@ if(isset($_POST['submit'])){
 																	<span class="input-group-addon">
 																			<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" class="form-control" name="first_name" placeholder="First Name" value="<?php echo $_SESSION['first_name'] ?>">
+																	<input type="text" class="form-control" name="first_name" placeholder="First Name" value="<?php echo $_SESSION['first_name']; ?>">
 															</div>
 														</div>
 														<div class="col-md-6"> <!-- takes up other half -->
@@ -111,7 +111,7 @@ if(isset($_POST['submit'])){
 																	<span class="input-group-addon">
 																				<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" class="form-control" name="last_name" placeholder="Last Name" value="<?php echo $_SESSION['last_name'] ?>">
+																	<input type="text" class="form-control" name="last_name" placeholder="Last Name" value="<?php echo $_SESSION['last_name']; ?>">
 																	</div>
 														</div>
 												</div> <!--Ends first row-->
@@ -121,11 +121,11 @@ if(isset($_POST['submit'])){
 													<span class="input-group-addon">
 																<i class="nc-icon nc-tag-content"></i>
 													</span>
-													<input type="text" class="form-control" name="title" placeholder="What are you?" value="<?php echo $_SESSION['title'] ?>">
+													<input type="text" class="form-control" name="title" placeholder="What are you?" value="<?php echo $_SESSION['title']; ?>">
 													</div>
 
 												<label>Description</label>
-												<textarea class="form-control" name="description" rows="4" placeholder="A little bit about you..."><?php echo $_SESSION['description'] ?></textarea>
+												<textarea class="form-control" name="description" rows="4" placeholder="A little bit about you..."><?php echo $_SESSION['description']; ?></textarea>
 												<div class="row">
 														<div class="col-md-4 ml-auto mr-auto">
 																<button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Update your Profile!</button>
