@@ -1,34 +1,10 @@
 <?php
-//start session
-if(!isset($_SESSION)){
-	session_start();
-}
-
-//runs if user pressed submit button
-if(isset($_POST['submit'])){
-	$email= $_SESSION['email'];
-	$first_name= $_POST['first_name'];
-	$last_name= $_POST['last_name'];
-	$title= $_POST['title'];
-	$description= $_POST['description'];
-
-	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
-	$conn->query($sql);
-
-	$sql="SELECT first_name, last_name, title, description FROM fm_users WHERE email_addr = \"$email\"";
-	$result=$conn->query($sql);
-
-	while ($row = $result->fetch_assoc()){
-			$_SESSION['first_name'] = $row['first_name'];
-			$_SESSION['last_name'] = $row['last_name'];
-			$_SESSION['title'] = $row['title'];
-			$_SESSION['description'] = $row['description'];
-		}
-	header("Location: profile.php");
-}
- ?>
-
+//Start Session if it is not running
+//Add name attributes to form elements
+//Set default values for each form element from $_SESSION
+//Update submitted values to database
+//Upldate submitted values to $_SESSION
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,10 +13,10 @@ if(isset($_POST['submit'])){
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Edit Profile</title>
+	<title>Follow me by Matthew</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width" />
 
 	<!-- Bootstrap core CSS     -->
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -56,15 +32,15 @@ if(isset($_POST['submit'])){
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="150">
-        <div class="container">
+  <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="150">
+    <div class="container">
 			<div class="navbar-translate">
-	            <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-bar"></span>
-								<span class="navbar-toggler-bar"></span>
-								<span class="navbar-toggler-bar"></span>
-	            </button>
-	            <a class="navbar-brand" href="https://www.youtube.com/channel/UCqhC4CJNWTKPIDpeuqjqMng">PickledTeddiesGaming!</a>
+	       <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			     <span class="navbar-toggler-bar"></span>
+				   <span class="navbar-toggler-bar"></span>
+				   <span class="navbar-toggler-bar"></span>
+	       </button>
+	       <a class="navbar-brand" href="#">Follow Me</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
@@ -73,78 +49,50 @@ if(isset($_POST['submit'])){
 	                </li>
 									<li class="nav-item">
 	                    <a href="#" class="nav-link">
-													<?php
-															echo $_SESSION['email'];
-													?>
-											</a>
+										<?php echo $_SESSION['email']; ?>
+										</a>
 	                </li>
 	            </ul>
 	        </div>
 		</div>
     </nav>
-<!--B O T H-->
+
     <div class="wrapper">
-        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('<?php echo $_SESSION['background_url']; ?>');">
-			<div class="filter"></div>
-		</div>
+      <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/fabio-mangione.jpg');">
+			  <div class="filter"></div>
+		  </div>
 
+			<br />
+			<br />
 
-		<div class="tab-content following">
-				<div class="tab-pane active" id="follows" role="tabpanel">
-						<div class="row">
-								<div class="col-md-6 ml-auto mr-auto">
-										<ul class="list-unstyled follows">
-												<li>
-														<div class="row">
-																<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-																		<img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-																</div>
-																<div class="col-md-7 col-sm-4  ml-auto mr-auto">
-																		<h6>Flume<br/><small>Musical Producer</small></h6>
-																</div>
-																<div class="col-md-3 col-sm-2  ml-auto mr-auto">
-						<div class="form-check">
-															<label class="form-check-label">
-																	<input class="form-check-input" type="checkbox" value="" checked>
-																	<span class="form-check-sign"></span>
-															</label>
-													</div>
-																</div>
-														</div>
-												</li>
-												<hr />
-												<li>
-														<div class="row">
-																<div class="col-md-2 ml-auto mr-auto ">
-																		<img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-																</div>
-																<div class="col-md-7 col-sm-4">
-																		<h6>Banks<br /><small>Singer</small></h6>
-																</div>
-																<div class="col-md-3 col-sm-2">
-						<div class="form-check">
-															<label class="form-check-label">
-																	<input class="form-check-input" type="checkbox" value="">
-																	<span class="form-check-sign"></span>
-															</label>
-													</div>
-																</div>
-														</div>
-												</li>
-										</ul>
+			<div class="row">
+				<div class="col-md-6 ml-auto mr-auto">
+					<ul class="list-unstyled follows">
+						<li>
+							<div class="row">
+								<div class="col-md-2 col-sm-2 ml-auto mr-auto">
+									<img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
 								</div>
-						</div>
+								<div class="col-md-7 col-sm-4  ml-auto mr-auto">
+									<h6>Flume<br/><small>Musical Producer</small></h6>
+								</div>
+								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
+									<div class="form-check">
+										<label class="form-check-label">
+										<input class="form-check-input" type="checkbox" value="" checked>
+										<span class="form-check-sign"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</li>
+						<hr />
+					</ul>
 				</div>
-				<div class="tab-pane text-center" id="following" role="tabpanel">
-						<h3 class="text-muted">Not following anyone yet :(</h3>
-						<button class="btn btn-warning btn-round">Find artists</button>
-				</div>
+			</div>
 		</div>
 
 
-
-</div>
-	</div>
 	<footer class="footer section-dark">
         <div class="container">
             <div class="row">
