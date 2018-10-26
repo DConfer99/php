@@ -86,7 +86,7 @@ $result=$conn->query($sql);
 								echo "<img src=\"" . $avatar_url . "\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
 								echo "</div>";
 								echo "<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">";
-								echo "<h6>Flume<br/><small>Musical Producer</small></h6>";
+								echo "<h6>" . $first_name . " " . $last_name . "<br/><small>" . $title . "</small></h6>";
 								echo "</div>";
 								echo "<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
 								echo "<div class=\"form-check\">";
