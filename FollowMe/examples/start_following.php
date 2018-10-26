@@ -1,9 +1,12 @@
 <?php
-//Start Session if it is not running
-//Add name attributes to form elements
-//Set default values for each form element from $_SESSION
-//Update submitted values to database
-//Upldate submitted values to $_SESSION
+
+if(!isset($_SESSION)){
+	session_start();
+}
+
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+$sql = "select avatar_url, first_name, last_name, title from fm_users";
+$result=$conn->query($sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -68,25 +71,38 @@
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
-						<li>
-							<div class="row">
-								<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-									<img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-								</div>
-								<div class="col-md-7 col-sm-4  ml-auto mr-auto">
-									<h6>Flume<br/><small>Musical Producer</small></h6>
-								</div>
-								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
-									<div class="form-check">
-										<label class="form-check-label">
-										<input class="form-check-input" type="checkbox" value="" checked>
-										<span class="form-check-sign"></span>
-										</label>
-									</div>
-								</div>
-							</div>
-						</li>
-						<hr />
+
+						<?php
+
+						while($row = $result->fetch_assoc()){
+								$avatar_url = $row['avatar_url'];
+								$first_name = $row['first_name'];
+								$last_name = $row['last_name'];
+								$title = $row['tile'];
+
+								echo "<li>";
+								echo "<div class=\"row\">";
+								echo "<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">";
+								echo "<img src=\"../assets/img/faces/clem-onojeghuo-2.jpg\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">";
+								echo "</div>";
+								echo "<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">";
+								echo "<h6>Flume<br/><small>Musical Producer</small></h6>";
+								echo "</div>";
+								echo "<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
+								echo "<div class=\"form-check\">";
+								echo "<label class=\"form-check-label\">";
+								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\">";
+								echo "<span class=\"form-check-sign\"></span>";
+								echo "</label>";
+								echo "</div>";
+								echo "</div>";
+								echo "</div>";
+								echo "</li>";
+								echo "<hr />";
+
+						}
+
+						 ?>
 					</ul>
 				</div>
 			</div>
