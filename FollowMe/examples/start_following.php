@@ -78,7 +78,7 @@ $result=$conn->query($sql);
 								$avatar_url = $row['avatar_url'];
 								$first_name = $row['first_name'];
 								$last_name = $row['last_name'];
-								$title = $row['tile'];
+								$title = $row['title'];
 
 								echo "<li>";
 								echo "<div class=\"row\">";
