@@ -3,7 +3,7 @@
 if(!isset($_SESSION)){
 	session_start();
 }
-
+//test
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 $sql = "select avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
