@@ -11,8 +11,13 @@ $result=$conn->query($sql);
 $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
 
-//get rid of me
-
+while($row = $following->fetch_assoc()){
+	$followingArray;
+	$i=0;
+	$followingArray[i]=$row['following_user_id'];
+	$i++;
+}
+echo $followingArray;
 ?>
 <!doctype html>
 <html lang="en">
@@ -102,11 +107,7 @@ $following=$conn->query($sql);
 
 								echo ">";
 
-								while($row = $following->fetch_assoc()){
-									echo $user_id;
-									echo $row['following_user_id'];
 
-								}
 
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
