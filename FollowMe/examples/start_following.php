@@ -103,6 +103,7 @@ echo $sql;
 										echo "checked";
 									}
 								}
+								echo " checked";
 								echo ">";
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
