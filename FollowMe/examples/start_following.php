@@ -13,7 +13,6 @@ $following=$conn->query($sql);
 
 //get rid of me
 echo $sql;
-var_dump($following);
 ?>
 <!doctype html>
 <html lang="en">
@@ -101,12 +100,15 @@ var_dump($following);
 								echo "<label class=\"form-check-label\">";
 								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
-								foreach ($following as $following_user_id) {
-									if ($following_user_id == $user_id) {
-										echo " checked";
+								echo ">";
+								
+								while($row = $following->fetch_assoc()){
+									if ($row['following_user_id'] == $user_id){
+										echo "hello";
 									}
 								}
-								echo ">";
+
+
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
 								echo "</div>";
