@@ -17,7 +17,7 @@ while($row = $following->fetch_assoc()){
 	$followingArray[i]=$row['following_user_id'];
 	$i++;
 }
-echo $followingArray;
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -104,10 +104,9 @@ echo $followingArray;
 								echo "<div class=\"form-check\">";
 								echo "<label class=\"form-check-label\">";
 								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
-
 								echo ">";
-
-
+								echo $followingArray[0];
+								echo $followingArray[1];
 
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
