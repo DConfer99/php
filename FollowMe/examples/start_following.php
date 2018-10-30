@@ -101,11 +101,9 @@ echo $sql;
 								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
 								echo ">";
-								
+
 								while($row = $following->fetch_assoc()){
-									if ($row['following_user_id'] == $user_id){
-										echo "hello";
-									}
+									echo $row['following_user_id'];
 								}
 
 
