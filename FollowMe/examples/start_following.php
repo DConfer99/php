@@ -10,6 +10,7 @@ $result=$conn->query($sql);
 
 $sql = "select following_user_id from fm_follows where user_id =" . $_SESSION['user_id'];
 $following=$conn->query($sql);
+echo "hello";
 echo $following;
 ?>
 <!doctype html>
