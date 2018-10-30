@@ -7,12 +7,13 @@ if($_POST['email'] != "" && $_POST['password'] != ""){
 	$email=$_POST['email'];
 	$password=$_POST['password'];
 
-	$sql="SELECT password, avatar_url, first_name, last_name, title, description, background_url FROM fm_users WHERE email_addr = \"$email\"";
+	$sql="SELECT user_id, password, avatar_url, first_name, last_name, title, description, background_url FROM fm_users WHERE email_addr = \"$email\"";
 	$result=$conn->query($sql);
 
 	while ($row = $result->fetch_assoc()){
 		if (password_verify($password, $row['password'])){
 			$_SESSION['email'] = $email;
+			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['avatar_url'] = $row['avatar_url'];
 			$_SESSION['first_name'] = $row['first_name'];
 			$_SESSION['last_name'] = $row['last_name'];
