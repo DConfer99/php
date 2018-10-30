@@ -95,7 +95,7 @@ $following=$conn->query($sql);
 								echo "<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
 								echo "<div class=\"form-check\">";
 								echo "<label class=\"form-check-label\">";
-								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\""
+								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
 								foreach ($following as $following_user_id) {
 									if ($following_user_id == $user_id) {
