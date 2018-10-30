@@ -110,7 +110,7 @@ echo $followingArray[1];
 								echo "<label class=\"form-check-label\">";
 								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 								echo ">";
-
+								echo "test";
 
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
