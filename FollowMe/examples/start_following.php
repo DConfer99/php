@@ -11,7 +11,8 @@ $result=$conn->query($sql);
 $sql = "select following_user_id from fm_follows where user_id =" . $_SESSION['user_id'];
 $following=$conn->query($sql);
 echo "hello";
-echo $following;
+echo $following[0];
+echo $following[1];
 ?>
 <!doctype html>
 <html lang="en">
