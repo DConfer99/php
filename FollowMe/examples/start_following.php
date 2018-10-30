@@ -10,7 +10,10 @@ $result=$conn->query($sql);
 
 $sql = "select following_user_id from fm_follows where user_id =" . $_SESSION['user_id'];
 $following=$conn->query($sql);
+
+//get rid of me
 echo $sql;
+echo $following;
 ?>
 <!doctype html>
 <html lang="en">
@@ -100,10 +103,9 @@ echo $sql;
 
 								foreach ($following as $following_user_id) {
 									if ($following_user_id == $user_id) {
-										echo "checked";
+										echo " checked";
 									}
 								}
-								echo " checked";
 								echo ">";
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
