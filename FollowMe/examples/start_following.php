@@ -8,7 +8,7 @@ $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
 
-$sql = "SELECT following_user_id FROM dillon.fm_follows where user_id = $_SESSION['user_id']";
+$sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
 
 //get rid of me
