@@ -18,7 +18,7 @@ $followingArray[1]=55;
 while($row = $following->fetch_row()){
 	echo $row['following_user_id'];
  //$i = 0;
- $followingArray[] = $row['following_user_id'];
+ $followingArray[] = $row;
  //$i++;
 }
 
