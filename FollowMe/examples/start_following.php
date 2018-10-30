@@ -16,7 +16,7 @@ $following=$conn->query($sql);
 //$followingArray[1]=55;
 
 while($row = $following->fetch_row()){
-	echo $row;
+	echo $row[0];
  //$i = 0;
  $followingArray[] = $row;
  //$i++;
