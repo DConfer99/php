@@ -13,7 +13,7 @@ $following=$conn->query($sql);
 
 //get rid of me
 echo $sql;
-echo $following;
+echo $following[0];
 ?>
 <!doctype html>
 <html lang="en">
