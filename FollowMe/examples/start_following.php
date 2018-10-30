@@ -10,7 +10,6 @@ $result=$conn->query($sql);
 
 $sql = "select following_user_id from fm_follows where user_id =" . $_SESSION['user_id'];
 $following=$conn->query($sql);
-echo "hello";
 echo $sql;
 ?>
 <!doctype html>
@@ -97,14 +96,14 @@ echo $sql;
 								echo "<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
 								echo "<div class=\"form-check\">";
 								echo "<label class=\"form-check-label\">";
-								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\">";
+								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
-								// foreach ($following as $following_user_id) {
-								// 	if ($following_user_id == $user_id) {
-								// 		echo "checked";
-								// 	}
-								// }
-								// echo ">";
+								foreach ($following as $following_user_id) {
+									if ($following_user_id == $user_id) {
+										echo "checked";
+									}
+								}
+								echo ">";
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
 								echo "</div>";
