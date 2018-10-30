@@ -5,7 +5,7 @@ if(!isset($_SESSION)){
 }
 
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-$sql = "select avatar_url, first_name, last_name, title from fm_users";
+$sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
 
 $sql = "select following_user_id from fm_follows where user_id =" . $_SESSION['user_id'];
@@ -82,6 +82,7 @@ $following=$conn->query($sql);
 								$first_name = $row['first_name'];
 								$last_name = $row['last_name'];
 								$title = $row['title'];
+								$user_id = $row['user_id'];
 
 								echo "<li>";
 								echo "<div class=\"row\">";
@@ -94,7 +95,14 @@ $following=$conn->query($sql);
 								echo "<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
 								echo "<div class=\"form-check\">";
 								echo "<label class=\"form-check-label\">";
-								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\" checked>";
+								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\""
+
+								foreach ($following as $following_user_id) {
+									if ($following_user_id == $user_id) {
+										echo "checked";
+									}
+								}
+								echo ">";
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
 								echo "</div>";
