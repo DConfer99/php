@@ -17,13 +17,8 @@ $following=$conn->query($sql);
 
 while($row = $following->fetch_row()){
 	echo $row[0];
- //$i = 0;
  $followingArray[] = $row[0];
- //$i++;
 }
-var_dump($followingArray);
-echo $followingArray[0];
-echo $followingArray[1];
 
 ?>
 <!doctype html>
@@ -112,7 +107,9 @@ echo $followingArray[1];
 								echo "<label class=\"form-check-label\">";
 								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
-								echo "checked";
+								if (in_array($user_id, $followingArray)){
+									echo "checked";
+								}
 
 								echo ">";
 
