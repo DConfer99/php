@@ -14,7 +14,6 @@ $following=$conn->query($sql);
 $followingArray;
 
 while($row = $following->fetch_assoc()){
-	$followingArray;
 	$i=0;
 	$followingArray[i]=$row['following_user_id'];
 	$i++;
