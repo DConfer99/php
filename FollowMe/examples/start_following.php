@@ -11,11 +11,12 @@ $result=$conn->query($sql);
 $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
 
+$followingArray;
+
 while($row = $following->fetch_assoc()){
 	$followingArray;
 	$i=0;
 	$followingArray[i]=$row['following_user_id'];
-	echo $followingArray[i];
 	$i++;
 }
 echo $followingArray[0];
