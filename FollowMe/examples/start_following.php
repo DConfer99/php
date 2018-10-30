@@ -12,7 +12,9 @@ $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESS
 $following=$conn->query($sql);
 
 //get rid of me
-echo $sql;
+while($row = $following->fetch_assoc()){
+	echo $row['following_user_id'];
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -101,11 +103,6 @@ echo $sql;
 								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
 
 								echo ">";
-
-								while($row = $following->fetch_assoc()){
-									echo $row['following_user_id'];
-								}
-
 
 								echo "<span class=\"form-check-sign\"></span>";
 								echo "</label>";
