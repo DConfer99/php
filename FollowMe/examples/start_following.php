@@ -17,13 +17,13 @@ $followingArray[1]=55;
 
 while($row = $following->fetch_assoc()){
 	//echo $row['following_user_id'];
- $i=0;
- $followingArray[i]=$row['following_user_id'];
- $i++;
+ //$i = 0;
+ $followingArray[] = $row['following_user_id'];
+ //$i++;
 }
 
-echo $followingArray[0]=44;
-echo $followingArray[1]=55;
+echo $followingArray[0];
+echo $followingArray[1];
 
 ?>
 <!doctype html>
