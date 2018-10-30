@@ -21,7 +21,7 @@ while($row = $following->fetch_row()){
  $followingArray[] = $row;
  //$i++;
 }
-var_dump()$followingArray);
+var_dump($followingArray);
 echo $followingArray[0];
 echo $followingArray[1];
 
