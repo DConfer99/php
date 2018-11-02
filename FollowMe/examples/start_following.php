@@ -17,9 +17,17 @@ $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESS
 $following=$conn->query($sql);
 //or can use fetch_row()
 while($row = $following->fetch_assoc()){
- $followingArray[] = $row[following_user_id];
+ $followingArray[] = $row['following_user_id'];
 }
 
+$sql="SELECT max(user_id) from fm_follows"
+$maxResult=$conn->query($sql);
+
+while($row = $maxResult->fetch_assoc()){
+	$maxUserID = $row['user_id'];
+}
+
+echo $maxUserID;
 ?>
 <!doctype html>
 <html lang="en">
