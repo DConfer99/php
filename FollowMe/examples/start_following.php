@@ -24,7 +24,7 @@ $sql="SELECT max(user_id) from fm_follows";
 $maxResult=$conn->query($sql);
 
 while($row = $maxResult->fetch_row()){
-	echo $row[0];
+	$maxUserID=$row[0];
 }
 
 echo $maxUserID;
