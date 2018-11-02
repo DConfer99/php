@@ -20,8 +20,6 @@ while($row = $following->fetch_assoc()){
  $followingArray[] = $row['following_user_id'];
 }
 
-vardump($following);
-
 $sql="SELECT max(user_id) from fm_follows";
 $maxResult=$conn->query($sql);
 
