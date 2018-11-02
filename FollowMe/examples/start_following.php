@@ -127,6 +127,7 @@ while($row = $following->fetch_assoc()){
 
 						 ?>
 					</ul>
+					<button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Start Following!</button>
 				</form>
 				</div>
 			</div>
