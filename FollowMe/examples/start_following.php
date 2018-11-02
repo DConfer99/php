@@ -25,6 +25,7 @@ $maxResult=$conn->query($sql);
 
 while($row = $maxResult->fetch_assoc()){
 	$maxUserID = $row['user_id'];
+	echo $row['user_id'];
 }
 
 echo $maxUserID;
