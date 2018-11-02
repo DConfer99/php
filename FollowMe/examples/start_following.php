@@ -1,4 +1,9 @@
+
 <?php
+echo $_POST['26'];
+echo $_POST['27'];
+echo $_POST['28'];
+echo $_POST['29'];
 
 if(!isset($_SESSION)){
 	session_start();
@@ -10,7 +15,7 @@ $result=$conn->query($sql);
 
 $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
-
+//or can use fetch_row()
 while($row = $following->fetch_assoc()){
  $followingArray[] = $row[following_user_id];
 }
@@ -78,6 +83,7 @@ while($row = $following->fetch_assoc()){
 
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
+					<form method="post" action="">
 					<ul class="list-unstyled follows">
 
 						<?php
@@ -100,7 +106,7 @@ while($row = $following->fetch_assoc()){
 								echo "<div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">";
 								echo "<div class=\"form-check\">";
 								echo "<label class=\"form-check-label\">";
-								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"\"";
+								echo "<input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" name=\"$user_id\"";
 
 								if (in_array($user_id, $followingArray)){
 									echo "checked";
@@ -121,6 +127,7 @@ while($row = $following->fetch_assoc()){
 
 						 ?>
 					</ul>
+				</form>
 				</div>
 			</div>
 		</div>
