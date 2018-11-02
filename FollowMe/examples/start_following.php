@@ -1,10 +1,5 @@
 
 <?php
-echo $_POST['26'];
-echo $_POST['27'];
-echo $_POST['28'];
-echo $_POST['29'];
-
 if(!isset($_SESSION)){
 	session_start();
 }
@@ -28,6 +23,12 @@ while($row = $maxResult->fetch_row()){
 }
 
 echo $maxUserID;
+
+for ($i=0; $i < $maxUserID; $i++) {
+	if ($_POST[$i] == "checked") {
+		echo $_POST[$i];
+	}
+}
 ?>
 <!doctype html>
 <html lang="en">
