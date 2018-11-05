@@ -29,8 +29,10 @@ while($row = $maxResult->fetch_row()){
 // 	}
 // }
 
-$i=26;
+$i=27;
 echo $_POST[$i];
+
+echo $_POST['27'];
 
 //run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
 //This will insert all users currently being followed into the DB
