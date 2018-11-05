@@ -23,11 +23,15 @@ while($row = $maxResult->fetch_row()){
 }
 
 //POST will return a list of variables whoose values are are user_ids of users that need to be followed, store values in array using for loop, test to see what values != ""
-for ($i=0; $i <= $maxUserID; $i++) {
-	if ($_POST[$i] != "") {
-		echo $i;
-	}
-}
+// for ($i=0; $i <= $maxUserID; $i++) {
+// 	if ($_POST[$i] != "") {
+// 		echo $i;
+// 	}
+// }
+
+$i=26;
+echo $_POST[$i];
+
 //run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
 //This will insert all users currently being followed into the DB
 //obtain array of all user_ids in DB using SQL
