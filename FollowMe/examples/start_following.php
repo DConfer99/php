@@ -3,6 +3,17 @@
 if(!isset($_SESSION)){
 	session_start();
 }
+
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+$sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
+$result=$conn->query($sql);
+
+$sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
+$following=$conn->query($sql);
+//or can use fetch_row()
+while($row = $following->fetch_assoc()){
+ $followingArray[] = $row['following_user_id'];
+}
 //run SQL query to determine maximum user_id in database
 $sql="SELECT max(user_id) from fm_users";
 $maxResult=$conn->query($sql);
@@ -25,17 +36,6 @@ echo $newFollowsArray[1];
 foreach ($newFollowsArray as $key => $user_id) {
 	$sql="insert into fm_follows (user_id, following_user_id) values (" . $_SESSION['user_id'] ."," . $user_id . ")";
 	$conn->query($sql);
-}
-
-$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-$sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
-$result=$conn->query($sql);
-
-$sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
-$following=$conn->query($sql);
-//or can use fetch_row()
-while($row = $following->fetch_assoc()){
- $followingArray[] = $row['following_user_id'];
 }
 
 //This will insert all users currently being followed into the DB
