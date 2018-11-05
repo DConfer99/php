@@ -3,6 +3,14 @@
 if(!isset($_SESSION)){
 	session_start();
 }
+
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+
+
+
+
+
+
 //run SQL query to determine maximum user_id in database
 $sql="SELECT max(user_id) from fm_users";
 $maxResult=$conn->query($sql);
@@ -18,8 +26,8 @@ for ($i=0; $i <= $maxUserID; $i++) {
 	}
 }
 
-//echo $newFollowsArray[0];
-//echo $newFollowsArray[1];
+echo $newFollowsArray[0];
+echo $newFollowsArray[1];
 
 //run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
 foreach ($newFollowsArray as $key => $user_id) {
@@ -27,7 +35,11 @@ foreach ($newFollowsArray as $key => $user_id) {
 	$conn->query($sql);
 }
 
-$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+
+
+
+
+
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
 
@@ -37,6 +49,7 @@ $following=$conn->query($sql);
 while($row = $following->fetch_assoc()){
  $followingArray[] = $row['following_user_id'];
 }
+
 
 //This will insert all users currently being followed into the DB
 //obtain array of all user_ids in DB using SQL
