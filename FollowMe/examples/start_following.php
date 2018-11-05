@@ -24,7 +24,7 @@ while($row = $maxResult->fetch_row()){
 
 //POST will return a list of variables whoose values are are user_ids of users that need to be followed, store values in array using for loop, test to see what values != ""
 for ($i=0; $i <= $maxUserID; $i++) {
-	if ($_POST['$i'] != "") {
+	if ($_POST[$i] != "") {
 		echo $i;
 	}
 }
