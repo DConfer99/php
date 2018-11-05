@@ -26,6 +26,7 @@ while($row = $maxResult->fetch_row()){
 for ($i=0; $i <= $maxUserID; $i++) {
 	if ($_POST[$i] != "") {
 		echo $i;
+		$newFollowsArray[] = $_POST[$i];
 	}
 }
 
