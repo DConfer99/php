@@ -3,6 +3,14 @@
 if(!isset($_SESSION)){
 	session_start();
 }
+//run SQL query to determine maximum user_id in database
+$sql="SELECT max(user_id) from fm_users";
+$maxResult=$conn->query($sql);
+
+while($row = $maxResult->fetch_row()){
+	$maxUserID=$row[0];
+}
+
 //POST will return a list of variables whoose values are are user_ids of users that need to be followed, store values in array using for loop, test to see what values != ""
 for ($i=0; $i <= $maxUserID; $i++) {
 	if ($_POST[$i] != "") {
@@ -28,13 +36,6 @@ $following=$conn->query($sql);
 //or can use fetch_row()
 while($row = $following->fetch_assoc()){
  $followingArray[] = $row['following_user_id'];
-}
-//run SQL query to determine maximum user_id in database
-$sql="SELECT max(user_id) from fm_users";
-$maxResult=$conn->query($sql);
-
-while($row = $maxResult->fetch_row()){
-	$maxUserID=$row[0];
 }
 
 //This will insert all users currently being followed into the DB
