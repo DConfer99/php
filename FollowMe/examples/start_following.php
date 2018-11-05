@@ -33,10 +33,10 @@ echo $newFollowsArray[0];
 echo $newFollowsArray[1];
 
 //run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
-// foreach ($newFollowsArray as $key => $user_id) {
-// 	$sql="insert into fm_follows (user_id, following_user_id) values ($_SESSION['user_id'], $user_id)";
-// 	$conn->query($sql);
-// }
+foreach ($newFollowsArray as $key => $user_id) {
+	$sql="insert into fm_follows (user_id, following_user_id) values ($_SESSION['user_id'], $user_id)";
+	$conn->query($sql);
+}
 
 //This will insert all users currently being followed into the DB
 //obtain array of all user_ids in DB using SQL
