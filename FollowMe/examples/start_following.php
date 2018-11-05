@@ -14,8 +14,8 @@ $following=$conn->query($sql);
 while($row = $following->fetch_assoc()){
  $followingArray[] = $row['following_user_id'];
 }
-
-$sql="SELECT max(user_id) from fm_follows";
+//run SQL query to determine maximum user_id in database
+$sql="SELECT max(user_id) from fm_users";
 $maxResult=$conn->query($sql);
 
 while($row = $maxResult->fetch_row()){
@@ -24,11 +24,13 @@ while($row = $maxResult->fetch_row()){
 
 echo $maxUserID;
 
-for ($i=0; $i < $maxUserID; $i++) {
-	if ($_POST[$i] == "checked") {
-		echo $_POST[$i];
-	}
-}
+//POST will return a list of variables whoose values are are user_ids of users that need to be followed, store values in array using for loop, test to see what values != ""
+//run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
+//This will insert all users currently being followed into the DB
+//obtain array of all user_ids in DB using SQL
+//remove entries from array that are the values returned in POST (the users currently being followed)
+// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
+
 ?>
 <!doctype html>
 <html lang="en">
