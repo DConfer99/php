@@ -26,22 +26,33 @@ for ($i=0; $i <= $maxUserID; $i++) {
 	}
 }
 
-echo $newFollowsArray[0];
-echo $newFollowsArray[1];
-
 //run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
 foreach ($newFollowsArray as $key => $user_id) {
 	$sql="insert into fm_follows (user_id, following_user_id) values (" . $_SESSION['user_id'] ."," . $user_id . ")";
 	$conn->query($sql);
 }
 
-
-
-
-
-
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
+
+while($row = $result->fetch_assoc()){
+	$user_id = $row['user_id'];
+	//obtain array of all user_ids in DB using SQL
+	$allUsersArray[]=$user_id;
+}
+echo $allUsersArray[0];
+echo $allUsersArray[1];
+
+
+
+//remove entries from array that are the values returned in POST (the users currently being followed)
+// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
+
+
+
+
+
+
 
 $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
@@ -49,12 +60,6 @@ $following=$conn->query($sql);
 while($row = $following->fetch_assoc()){
  $followingArray[] = $row['following_user_id'];
 }
-
-
-//This will insert all users currently being followed into the DB
-//obtain array of all user_ids in DB using SQL
-//remove entries from array that are the values returned in POST (the users currently being followed)
-// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
 
 ?>
 <!doctype html>
@@ -160,6 +165,7 @@ while($row = $following->fetch_assoc()){
 								echo "<hr />";
 
 						}
+
 
 						 ?>
 					</ul>
