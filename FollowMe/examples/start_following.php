@@ -48,6 +48,7 @@ foreach ($newFollowsArray as $key => $user_id) {
 	//remove user_id from $allUsersArray
 }
 
+
 foreach ($allUsersArray as $key => $user_id_unfollow) {
 	// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
 	echo $user_id_unfollow;
@@ -63,6 +64,7 @@ $result=$conn->query($sql);
 
 $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
+
 //or can use fetch_row()
 while($row = $following->fetch_assoc()){
  $followingArray[] = $row['following_user_id'];
