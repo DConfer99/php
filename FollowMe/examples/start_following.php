@@ -35,13 +35,13 @@ foreach ($newFollowsArray as $key => $user_id) {
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
 
-while($row = $result->fetch_assoc()){
-	$user_id = $row['user_id'];
-	//obtain array of all user_ids in DB using SQL
-	$allUsersArray[]=$user_id;
-}
-echo $allUsersArray[0];
-echo $allUsersArray[1];
+// while($row = $result->fetch_assoc()){
+// 	$user_id = $row['user_id'];
+// 	//obtain array of all user_ids in DB using SQL
+// 	$allUsersArray[]=$user_id;
+// }
+// echo $allUsersArray[0];
+// echo $allUsersArray[1];
 
 
 
