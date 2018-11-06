@@ -32,16 +32,17 @@ foreach ($newFollowsArray as $key => $user_id) {
 	$conn->query($sql);
 }
 
-$sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
-$result=$conn->query($sql);
+$sql = "select user_id from fm_users";
+$user_id_result=$conn->query($sql);
 
-// while($row = $result->fetch_assoc()){
-// 	$user_id = $row['user_id'];
-// 	//obtain array of all user_ids in DB using SQL
-// 	$allUsersArray[]=$user_id;
-// }
-// echo $allUsersArray[0];
-// echo $allUsersArray[1];
+while($row = $user_id_result->fetch_assoc()){
+	$user_id = $row['user_id'];
+	
+	//obtain array of all user_ids in DB using SQL
+	$allUsersArray[]=$user_id;
+}
+echo $user_id_result[0];
+echo $user_id_result[1];
 
 
 
@@ -49,10 +50,8 @@ $result=$conn->query($sql);
 // use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
 
 
-
-
-
-
+$sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
+$result=$conn->query($sql);
 
 $sql = "SELECT following_user_id FROM dillon.fm_follows where user_id=" . $_SESSION['user_id'];
 $following=$conn->query($sql);
