@@ -48,16 +48,14 @@ foreach ($newFollowsArray as $key => $user_id) {
 	//remove user_id from $allUsersArray
 }
 
-
-foreach ($allUsersArray as $key => $user_id_unfollow) {
-	// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
-	echo $user_id_unfollow;
-	$sql="delete from fm_follows where user_id =" . $_SESSION['user_id'] . "and following_user_id =" . $user_id_unfollow;
-	$conn->query($sql);
+if(isset($_POST['submit'])){
+	foreach ($allUsersArray as $key => $user_id_unfollow) {
+		// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
+		echo $user_id_unfollow;
+		$sql="delete from fm_follows where user_id =" . $_SESSION['user_id'] . "and following_user_id =" . $user_id_unfollow;
+		$conn->query($sql);
+	}
 }
-
-
-
 
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
 $result=$conn->query($sql);
