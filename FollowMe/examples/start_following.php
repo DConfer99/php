@@ -37,12 +37,12 @@ $user_id_result=$conn->query($sql);
 
 while($row = $user_id_result->fetch_assoc()){
 	$user_id = $row['user_id'];
-	
+
 	//obtain array of all user_ids in DB using SQL
 	$allUsersArray[]=$user_id;
 }
-echo $user_id_result[0];
-echo $user_id_result[1];
+// echo $user_id_result[0];
+// echo $user_id_result[1];
 
 
 
