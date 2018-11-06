@@ -26,11 +26,7 @@ for ($i=0; $i <= $maxUserID; $i++) {
 	}
 }
 
-//run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
-foreach ($newFollowsArray as $key => $user_id) {
-	$sql="insert into fm_follows (user_id, following_user_id) values (" . $_SESSION['user_id'] ."," . $user_id . ")";
-	$conn->query($sql);
-}
+
 
 $sql = "select user_id from fm_users";
 $user_id_result=$conn->query($sql);
@@ -47,6 +43,14 @@ foreach ($newFollowsArray as $key => $user_id) {
 	array_splice($allUsersArray, $allUsersArrayKey,1);
 	//remove user_id from $allUsersArray
 }
+
+
+//run for loop to insert these values into fm_follows, the user_id will be $_SESSION['user_id'] and the following_user_id will be the values from POST, use if(in_array())
+foreach ($newFollowsArray as $key => $user_id) {
+	$sql="insert into fm_follows (user_id, following_user_id) values (" . $_SESSION['user_id'] ."," . $user_id . ")";
+	$conn->query($sql);
+}
+
 
 if(isset($_POST['submit'])){
 	foreach ($allUsersArray as $key => $user_id_unfollow) {
