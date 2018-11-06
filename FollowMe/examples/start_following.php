@@ -48,9 +48,9 @@ foreach ($newFollowsArray as $key => $user_id) {
 	//remove user_id from $allUsersArray
 }
 
-foreach ($allUsersArray as $key => $value) {
-	echo $value;
-}
+echo $allUsersArray[0];
+echo $allUsersArray[1];
+echo $allUsersArray[2];
 
 // use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
 
