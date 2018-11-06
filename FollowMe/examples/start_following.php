@@ -48,11 +48,13 @@ foreach ($newFollowsArray as $key => $user_id) {
 	//remove user_id from $allUsersArray
 }
 
-echo $allUsersArray[0];
-echo $allUsersArray[1];
-echo $allUsersArray[2];
+foreach ($allUsersArray as $key => $user_id_unfollow) {
+	// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
+	$sql="delete from fm_follows where user_id =" . $_SESSION['user_id'] . "and following_user_id =" . $user_id_unfollow;
+	$conn->query($sql);
+}
 
-// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
+
 
 
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
