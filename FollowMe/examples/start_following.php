@@ -44,7 +44,7 @@ while($row = $user_id_result->fetch_assoc()){
 //remove entries from array that are the values returned in POST (the users currently being followed)
 foreach ($newFollowsArray as $key => $user_id) {
 	$allUsersArrayKey=array_search($user_id, $allUsersArray);
-	$allUsersArray=array_splice($allUsersArray, $allUsersArrayKey,1);
+	array_splice($allUsersArray, $allUsersArrayKey,1);
 	//remove user_id from $allUsersArray
 }
 
