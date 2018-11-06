@@ -44,10 +44,13 @@ while($row = $user_id_result->fetch_assoc()){
 //remove entries from array that are the values returned in POST (the users currently being followed)
 foreach ($newFollowsArray as $key => $user_id) {
 	$allUsersArrayKey=array_search($user_id, $allUsersArray);
-	echo $allUsersArrayKey;
+	$allUsersArray=array_splice($allUsersArray, $allUsersArrayKey,1);
 	//remove user_id from $allUsersArray
 }
 
+foreach ($allUsersArray as $key => $value) {
+	echo $value;
+}
 
 // use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
 
