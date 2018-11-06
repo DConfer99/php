@@ -50,6 +50,7 @@ foreach ($newFollowsArray as $key => $user_id) {
 
 foreach ($allUsersArray as $key => $user_id_unfollow) {
 	// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
+	echo $user_id_unfollow;
 	$sql="delete from fm_follows where user_id =" . $_SESSION['user_id'] . "and following_user_id =" . $user_id_unfollow;
 	$conn->query($sql);
 }
