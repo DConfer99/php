@@ -3,8 +3,10 @@
 if(!isset($_SESSION)){
 	session_start();
 }
-//uses $_SESSION['email'] to display email in nav bar
-//modify fm_users to include avatar_url, first_name, last_name, title, description
+
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+$sql="select following_user_id from fm_follows where user_id=" . $_SESSION['user_id'];
+$result=$conn->query($sql);
  ?>
 
 <!doctype html>
@@ -147,6 +149,10 @@ if(!isset($_SESSION)){
 											<div class="row">
 													<div class="col-md-6 ml-auto mr-auto">
 															<ul class="list-unstyled follows">
+
+
+
+
 																	<li>
 																			<div class="row">
 																					<div class="col-md-2 col-sm-2 ml-auto mr-auto">
@@ -166,24 +172,9 @@ if(!isset($_SESSION)){
 																			</div>
 																	</li>
 																	<hr />
-																	<li>
-																			<div class="row">
-																					<div class="col-md-2 ml-auto mr-auto ">
-																							<img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-																					</div>
-																					<div class="col-md-7 col-sm-4">
-																							<h6>Banks<br /><small>Singer</small></h6>
-																					</div>
-																					<div class="col-md-3 col-sm-2">
-											<div class="form-check">
-																				<label class="form-check-label">
-																						<input class="form-check-input" type="checkbox" value="">
-																						<span class="form-check-sign"></span>
-																				</label>
-																		</div>
-																					</div>
-																			</div>
-																	</li>
+
+
+
 															</ul>
 													</div>
 											</div>
