@@ -5,7 +5,7 @@ if(!isset($_SESSION)){
 }
 
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-$sql="select following_user_id from fm_follows where user_id=" . $_SESSION['user_id'];
+$sql= "select avatar_url, first_name, last_name, title from fm_users where user_id in ((select following_user_id from fm_follows where user_id=" . $_SESSION['user_id'] . "));";
 $result=$conn->query($sql);
  ?>
 
