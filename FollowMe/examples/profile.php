@@ -187,7 +187,7 @@ if(!isset($_SESSION)){
 															</ul>
 													</div>
 											</div>
-                        <button href="start_following.php" class="btn btn-warning btn-round">Start Following</button>
+                        <a href="start_following.php"><button class="btn btn-warning btn-round">Start Following</button></a>
                     </div>
                 </div>
             </div>
