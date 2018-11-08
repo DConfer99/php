@@ -166,6 +166,8 @@ $result=$conn->query($sql);
 																					<div class="col-md-7 col-sm-4">
 																							<h6><?php echo $first_name; echo " "; echo $last_name;?><br/><small><?php echo $title; ?></small></h6>
 																					</div>
+																					<div class="col-md-3 col-sm-2">
+																					</div>
 																			</div>
 																	</li>
 																	<hr />
