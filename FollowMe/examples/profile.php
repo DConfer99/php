@@ -166,14 +166,6 @@ $result=$conn->query($sql);
 																					<div class="col-md-7 col-sm-4  ml-auto mr-auto">
 																							<h6><?php echo $first_name; echo " "; echo $last_name;?><br/><small><?php echo $title; ?></small></h6>
 																					</div>
-																					<div class="col-md-3 col-sm-2  ml-auto mr-auto">
-											<div class="form-check">
-																				<label class="form-check-label">
-																						<input class="form-check-input" type="checkbox" value="" checked>
-																						<span class="form-check-sign"></span>
-																				</label>
-																		</div>
-																					</div>
 																			</div>
 																	</li>
 																	<hr />
