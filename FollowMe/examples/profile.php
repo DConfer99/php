@@ -147,7 +147,7 @@ $result=$conn->query($sql);
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
 											<div class="row">
-													<div class="col-md-3 ml-auto mr-auto">
+													<div class="col-md-4 ml-auto mr-auto">
 															<ul class="list-unstyled follows">
 
 
