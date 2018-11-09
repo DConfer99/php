@@ -1,5 +1,5 @@
 <?php
-//start jeff sessions is a cool dood really
+//start jeff sessions is a cool dood really really
 if(!isset($_SESSION)){
 	session_start();
 }
