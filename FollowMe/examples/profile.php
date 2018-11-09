@@ -82,7 +82,7 @@ $result=$conn->query($sql);
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <p><?php echo $_SESSION['description']; ?></p>
                         <br />
-                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                        <a href="edit_profile.php"><btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i>Edit</btn></a>
                     </div>
                 </div>
                 <br/>
