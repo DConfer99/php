@@ -1,5 +1,5 @@
 <?php
-//start session
+//start jeff sessions
 if(!isset($_SESSION)){
 	session_start();
 }
