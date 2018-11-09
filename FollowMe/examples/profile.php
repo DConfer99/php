@@ -105,7 +105,7 @@ $followers=$conn->query($sql);
                 <div class="tab-content following">
                     <div class="tab-pane active" id="follows" role="tabpanel">
                         <div class="row">
-                            <div class="col-md-6 ml-auto mr-auto">
+                            <div class="col-md-4 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
 
 																	<?php while($row = $followers->fetch_assoc()){
