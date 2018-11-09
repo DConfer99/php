@@ -6,7 +6,10 @@ if(!isset($_SESSION)){
 
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 $sql= "select avatar_url, first_name, last_name, title from fm_users where user_id in ((select following_user_id from fm_follows where user_id=" . $_SESSION['user_id'] . "));";
-$result=$conn->query($sql);
+$following=$conn->query($sql);
+
+$sql= "select avatar_url, first_name, last_name, title from fm_users where user_id in ((select user_id from fm_follows where following_user_id=" . $_SESSION['user_id'] . "));";
+$followers=$conn->query($sql);
  ?>
 
 <!doctype html>
@@ -90,7 +93,7 @@ $result=$conn->query($sql);
                     <div class="nav-tabs-wrapper">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Followers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
@@ -104,43 +107,26 @@ $result=$conn->query($sql);
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                            </div>
-                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
-                                                <h6>Flume<br/><small>Musical Producer</small></h6>
-                                            </div>
-                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
-												<div class="form-check">
-					                                <label class="form-check-label">
-					                                    <input class="form-check-input" type="checkbox" value="" checked>
-					                                    <span class="form-check-sign"></span>
-					                                </label>
-					                            </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <hr />
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-2 ml-auto mr-auto ">
-                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                            </div>
-                                            <div class="col-md-7 col-sm-4">
-                                                <h6>Banks<br /><small>Singer</small></h6>
-                                            </div>
-                                            <div class="col-md-3 col-sm-2">
-												<div class="form-check">
-					                                <label class="form-check-label">
-					                                    <input class="form-check-input" type="checkbox" value="">
-					                                    <span class="form-check-sign"></span>
-					                                </label>
-					                            </div>
-                                            </div>
-                                        </div>
-                                    </li>
+
+																	<?php while($row = $followers->fetch_assoc()){
+																		$avatar_url = $row['avatar_url'];
+																		$first_name = $row['first_name'];
+																		$last_name = $row['last_name'];
+																		$title = $row['title'];
+																		?>
+																		<li>
+																				<div class="row">
+																						<div class="col-md-2 col-sm-2 ml-auto mr-auto">
+																								<img src="<?php echo $avatar_url; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+																						</div>
+																						<div class="col-md-7 col-sm-4  ml-auto mr-auto">
+																								<h6><?php echo $first_name; echo " "; echo $last_name;?><br/><small><?php echo $title; ?></small></h6>
+																						</div>
+																				</div>
+																		</li>
+																		<hr />
+																	<?php } ?>
+
                                 </ul>
                             </div>
                         </div>
@@ -152,7 +138,7 @@ $result=$conn->query($sql);
 
 
 
-																<?php while($row = $result->fetch_assoc()){
+																<?php while($row = $following->fetch_assoc()){
 																	$avatar_url = $row['avatar_url'];
 																	$first_name = $row['first_name'];
 																	$last_name = $row['last_name'];
