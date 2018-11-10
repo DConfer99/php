@@ -53,8 +53,8 @@ if(isset($_POST['submit'])){
 		// use for loop to run SQL to remove all other database entries where user_id = $_SESSION['user_id']
 		$sql="delete from fm_follows where user_id =" . $_SESSION['user_id'] . " and following_user_id =" . $user_id_unfollow;
 		$conn->query($sql);
-		header("Location: profile.php");
 	}
+	header("Location: profile.php");
 }
 
 $sql = "select user_id, avatar_url, first_name, last_name, title from fm_users";
