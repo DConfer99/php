@@ -96,6 +96,7 @@ if(isset($_POST['submit'])){
 											<div class="row">
 												<div class="col-md-3 ml-auto mr-auto">
 														<div class="avatar">
+															<input type="file">
 																<button type="file"><img src="<?php echo $_SESSION['avatar_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive"></button>
 														</div>
 												</div>
