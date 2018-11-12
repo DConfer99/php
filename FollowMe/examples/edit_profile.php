@@ -96,9 +96,9 @@ if(isset($_POST['submit'])){
 											<div class="row">
 												<div class="col-md-3 ml-auto mr-auto">
 														<div class="avatar">
-																<img src="<?php echo $_SESSION['avatar_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+																<button type="file"><img src="<?php echo $_SESSION['avatar_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive"></button>
 														</div>
-												</div>		
+												</div>
 											</div>
 
 												<div class="row"> <!--row within row-->
