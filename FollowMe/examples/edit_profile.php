@@ -82,7 +82,6 @@ if(isset($_POST['submit'])){
 	        </div>
 		</div>
     </nav>
-<!--B O T H-->
     <div class="wrapper">
         <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('<?php echo $_SESSION['background_url']; ?>');">
 			<div class="filter"></div>
@@ -94,6 +93,10 @@ if(isset($_POST['submit'])){
 										<h2 class="text-center">A profile as unique as you!</h2>
 										<form class="contact-form" action="" method="post">
 												<div class="row"> <!--row within row-->
+
+													<div class="avatar">
+			                        <img src="<?php echo $_SESSION['avatar_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+			                    </div>
 
 														<div class="col-md-6"> <!--further dives takes up half of another 12-->
 																<label>First Name</label>
