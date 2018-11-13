@@ -22,10 +22,10 @@ if(isset($_POST['submit'])){
 
 	$file_type = $_FILES['new_image']['type'];
 	$file_type=substr($file_type,6);
-	echo $file_type;
-//echo basename($_FILES['new_image']['type']);
-	//$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . ;
-	//echo $new_image_file_path;
+
+	echo basename($_FILES['new_image']['type']);
+	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
+	echo $new_image_file_path;
 	//move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 
 
