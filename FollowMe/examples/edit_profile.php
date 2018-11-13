@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
 	$last_name= $_POST['last_name'];
 	$title= $_POST['title'];
 	$description= $_POST['description'];
-	$new_image_file_path=$_POST['new_image']['name'];
+	$new_image_file_path=$_FILES['new_image']['name'];
 
 	echo $new_image_file_path;
 
