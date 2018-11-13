@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 		mkdir("./images/" . $_SESSION['user_id'] . "/");
 	}
 
-echo basename($_FILES['new_image']['name']);
+echo basename($_FILES['new_image']['type']);
 	//$new_image_file_path="./images/" . $_SESSION['user_id'] . "/"
 	//move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 
