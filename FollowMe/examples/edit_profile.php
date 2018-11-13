@@ -91,15 +91,23 @@ if(isset($_POST['submit'])){
 						<div class="row">
 								<div class="col-md-8 ml-auto mr-auto"> <!--takes up 8 of 12 square, left and right margin auto adjust to center-->
 										<h2 class="text-center">A profile as unique as you!</h2>
-										<form class="contact-form" action="" method="post">
+										<form class="contact-form" action="" method="post" enctype="multipart/form-data">
+
+
+
 
 											<div class="row">
 												<div class="col-md-3 ml-auto mr-auto">
+													<label>Avatar Image</label>
 														<div class="avatar">
 																<img src="<?php echo $_SESSION['avatar_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+																<input type="file" name="new_image">
 														</div>
 												</div>
 											</div>
+
+
+
 
 												<div class="row"> <!--row within row-->
 														<div class="col-md-6"> <!--further dives takes up half of another 12-->
