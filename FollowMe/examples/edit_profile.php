@@ -12,9 +12,21 @@ if(isset($_POST['submit'])){
 	$title= $_POST['title'];
 	$description= $_POST['description'];
 
+
+
+
+
 	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
 		mkdir("./images/" . $_SESSION['user_id'] . "/");
 	}
+
+echo basename($_FILES['new_image']['name']);
+	//$new_image_file_path="./images/" . $_SESSION['user_id'] . "/"
+	//move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
+
+
+
+
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
