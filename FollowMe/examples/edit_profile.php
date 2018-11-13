@@ -11,6 +11,9 @@ if(isset($_POST['submit'])){
 	$last_name= $_POST['last_name'];
 	$title= $_POST['title'];
 	$description= $_POST['description'];
+	$new_image_file_path=$_POST['new_image']['name'];
+
+	echo $new_image_file_path;
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
