@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
 		}
-	header("Location: profile.php");
+	//header("Location: profile.php");
 }
  ?>
 
