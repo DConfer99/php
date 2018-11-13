@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
 
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
+	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where email_addr = \"$email\"";
 	$conn->query($sql);
 
 	$sql="SELECT first_name, last_name, title, description FROM fm_users WHERE email_addr = \"$email\"";
