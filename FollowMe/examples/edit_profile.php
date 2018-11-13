@@ -12,6 +12,10 @@ if(isset($_POST['submit'])){
 	$title= $_POST['title'];
 	$description= $_POST['description'];
 
+	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
+		mkdir("./images/" . $_SESSION['user_id'] . "/");
+	}
+
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
 	$conn->query($sql);
