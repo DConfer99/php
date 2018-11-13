@@ -11,9 +11,9 @@ if(isset($_POST['submit'])){
 	$last_name= $_POST['last_name'];
 	$title= $_POST['title'];
 	$description= $_POST['description'];
-	$new_image_file_path=$_FILES['new_image']['name'];
+	$new_image_name=$_FILES['new_image']['name'];
 
-	echo $new_image_file_path;
+	$target_file_path="./images/" . $_SESSION['user_id'] . "/" . $new_image_name;
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
@@ -28,6 +28,7 @@ if(isset($_POST['submit'])){
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
 		}
+
 	//header("Location: profile.php");
 }
  ?>
