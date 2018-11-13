@@ -14,6 +14,7 @@ if(isset($_POST['submit'])){
 	$new_image_name=$_FILES['new_image']['name'];
 
 	$target_file_path="./images/" . $_SESSION['user_id'] . "/" . $new_image_name;
+	echo $target_file_path;
 
 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where email_addr = \"$email\"";
