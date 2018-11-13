@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where email_addr = \"$email\"";
 	$conn->query($sql);
 
-	$sql="SELECT first_name, last_name, title, description FROM fm_users WHERE email_addr = \"$email\"";
+	$sql="SELECT first_name, last_name, title, description, avatar_url FROM fm_users WHERE email_addr = \"$email\"";
 	$result=$conn->query($sql);
 
 	while ($row = $result->fetch_assoc()){
@@ -44,9 +44,10 @@ if(isset($_POST['submit'])){
 			$_SESSION['last_name'] = $row['last_name'];
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
+			$_SESSION['avatar_url'] = $row['avatar_url'];
 		}
 
-	//header("Location: profile.php");
+	header("Location: profile.php");
 }
  ?>
 
