@@ -16,7 +16,8 @@ if(isset($_POST['submit'])){
 //echo "\"" . $_FILES['new_image']['name'] . "\"";
 var_dump($_FILES['new_image']);
 
-if ($_FILES['new_image']['error'] == 0) {
+$uploadError = $_FILES['new_image']['error'];
+if ($uploadError == 0) {
 	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
 		mkdir("./images/" . $_SESSION['user_id'] . "/");
 	}
