@@ -13,7 +13,8 @@ if(isset($_POST['submit'])){
 	$description= $_POST['description'];
 
 
-echo "\"" . $_FILES['new_image']['name'] . "\"";
+//echo "\"" . $_FILES['new_image']['name'] . "\"";
+var_dump($_FILES['new_image']);
 
 if (isset($_FILES['new_image'])){
 	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
