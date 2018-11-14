@@ -14,8 +14,7 @@ if(isset($_POST['submit'])){
 
 
 
-
-if ($_FILES['new_image'] != NULL){
+if (isset($_FILES['new_image'])){
 	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
 		mkdir("./images/" . $_SESSION['user_id'] . "/");
 	}
@@ -28,6 +27,9 @@ if ($_FILES['new_image'] != NULL){
 
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 }
+
+
+
 
 
 
