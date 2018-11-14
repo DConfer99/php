@@ -15,6 +15,7 @@ if(isset($_POST['submit'])){
 
 echo "\"" . $_FILES['new_image']['name'] . "\"";
 
+if (isset($_FILES['new_image'])){
 	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
 		mkdir("./images/" . $_SESSION['user_id'] . "/");
 	}
@@ -25,6 +26,8 @@ echo "\"" . $_FILES['new_image']['name'] . "\"";
 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
 
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
+
+}
 
 
 
