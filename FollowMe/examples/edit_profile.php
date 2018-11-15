@@ -35,7 +35,7 @@ echo $_FILES['new_image']['name'];
 // 	$conn->query($sql);
 //
 
-} //Ends Post If
+//} //Ends Post If
 
 
 
