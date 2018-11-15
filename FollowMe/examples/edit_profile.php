@@ -57,7 +57,7 @@ echo "\"" . $_FILES['new_image']['name'] . "\"";
 	// 	}
 
 	//header("Location: profile.php");
-//}
+}
  ?>
 
 <!doctype html>
