@@ -14,6 +14,9 @@ if(isset($_POST['submit'])){
 
 
 echo "\"" . $_FILES['new_image']['name'] . "\"";
+if ($_FILES['new_image']['name'] == ""){
+	echo "hello";
+}
 // var_dump($_FILES['new_image']);
 //
 // $uploadError = $_FILES['new_image']['error'];
