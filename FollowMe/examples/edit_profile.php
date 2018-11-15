@@ -12,8 +12,8 @@ if(isset($_POST['submit'])){
 	$title= $_POST['title'];
 	$description= $_POST['description'];
 
-echo $_FILES['new_image']['name'];
-//echo "\"" . $_FILES['new_image']['name'] . "\"";
+
+echo "\"" . $_FILES['new_image']['name'] . "\"";
 // var_dump($_FILES['new_image']);
 //
 // $uploadError = $_FILES['new_image']['error'];
