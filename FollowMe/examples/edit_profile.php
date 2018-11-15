@@ -6,7 +6,7 @@ if(!isset($_SESSION)){
 
 //runs if user pressed submit button
 if(isset($_POST['submit'])){
-	$email= $_SESSION['email'];
+	$user_id = $_SESSION['user_id'];
 	$first_name= $_POST['first_name'];
 	$last_name= $_POST['last_name'];
 	$title= $_POST['title'];
@@ -33,8 +33,16 @@ if ($_FILES['new_image']['name'] != ""){
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 }
 
-// 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-// 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where email_addr = \"$email\"";
+$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\""
+
+if ($_FILES['new_image']['name'] != ""){
+	. ", avatar_url = \"$new_image_file_path\""
+}
+
+. "where user_id = \"$user_id\"";
+
+echo $sql;
 // 	$conn->query($sql);
 //
 
