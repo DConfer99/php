@@ -27,7 +27,7 @@ if ($_FILES['new_image']['name'] != ""){
 
 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
 
-	unlink("./images/" . $_SESSION['user_id'] . "/avatar.png");
+	shell_exec("rm ./limages/" . $_SESSION['user_id'] . "/avatar.*");
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 }
 
