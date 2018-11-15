@@ -27,7 +27,7 @@ if ($_FILES['new_image']['name'] != ""){
 
 	$old_files="./images/" . $_SESSION['user_id'] . "/avatar.png";
 	//unlink($old_files);
-	shell_exec('rm ./test.txt');
+	shell_exec('rm /var/www/html/dillon/php/FollowMe/examples/test.txt');
 
 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
