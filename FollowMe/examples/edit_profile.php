@@ -12,38 +12,38 @@ if(isset($_POST['submit'])){
 	$title= $_POST['title'];
 	$description= $_POST['description'];
 
-
+echo $_FILES['new_image']['name'];
 //echo "\"" . $_FILES['new_image']['name'] . "\"";
-var_dump($_FILES['new_image']);
+// var_dump($_FILES['new_image']);
+//
+// $uploadError = $_FILES['new_image']['error'];
+// if ($uploadError == 0) {
+// 	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
+// 		mkdir("./images/" . $_SESSION['user_id'] . "/");
+// 	}
+//
+// 	$file_type = $_FILES['new_image']['type'];
+// 	$file_type=substr($file_type,6);
+//
+// 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
+//
+// 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
+//
+//
+// 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
+// 	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where email_addr = \"$email\"";
+// 	$conn->query($sql);
+//
 
-$uploadError = $_FILES['new_image']['error'];
-if ($uploadError == 0) {
-	if(!file_exists("./images/" . $_SESSION['user_id'] . "/")){
-		mkdir("./images/" . $_SESSION['user_id'] . "/");
-	}
-
-	$file_type = $_FILES['new_image']['type'];
-	$file_type=substr($file_type,6);
-
-	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
-
-	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
-
-}
-
-
-
-
-
-
-
-
+} //Ends Post If
 
 
 
-	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
-	$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where email_addr = \"$email\"";
-	$conn->query($sql);
+
+
+
+
+
 
 	$sql="SELECT first_name, last_name, title, description, avatar_url FROM fm_users WHERE email_addr = \"$email\"";
 	$result=$conn->query($sql);
