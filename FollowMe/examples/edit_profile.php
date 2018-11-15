@@ -45,19 +45,19 @@ echo "\"" . $_FILES['new_image']['name'] . "\"";
 
 
 
-	$sql="SELECT first_name, last_name, title, description, avatar_url FROM fm_users WHERE email_addr = \"$email\"";
-	$result=$conn->query($sql);
-
-	while ($row = $result->fetch_assoc()){
-			$_SESSION['first_name'] = $row['first_name'];
-			$_SESSION['last_name'] = $row['last_name'];
-			$_SESSION['title'] = $row['title'];
-			$_SESSION['description'] = $row['description'];
-			$_SESSION['avatar_url'] = $row['avatar_url'];
-		}
+	// $sql="SELECT first_name, last_name, title, description, avatar_url FROM fm_users WHERE email_addr = \"$email\"";
+	// $result=$conn->query($sql);
+	//
+	// while ($row = $result->fetch_assoc()){
+	// 		$_SESSION['first_name'] = $row['first_name'];
+	// 		$_SESSION['last_name'] = $row['last_name'];
+	// 		$_SESSION['title'] = $row['title'];
+	// 		$_SESSION['description'] = $row['description'];
+	// 		$_SESSION['avatar_url'] = $row['avatar_url'];
+	// 	}
 
 	//header("Location: profile.php");
-}
+//}
  ?>
 
 <!doctype html>
