@@ -13,8 +13,6 @@ if(isset($_POST['submit'])){
 	$description= $_POST['description'];
 
 
-echo "\"" . $_FILES['new_image']['name'] . "\"";
-
 //runs if a new avatar image is uploaded
 if ($_FILES['new_image']['name'] != ""){
 
@@ -45,7 +43,6 @@ if ($_FILES['new_image']['name'] != ""){
 
 }
 
-echo $sql;
 $conn->query($sql);
 
 
@@ -60,7 +57,7 @@ $conn->query($sql);
 			$_SESSION['avatar_url'] = $row['avatar_url'];
 		}
 
-	//header("Location: profile.php");
+	header("Location: profile.php");
 }
  ?>
 
