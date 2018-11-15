@@ -30,7 +30,7 @@ if ($_FILES['new_image']['name'] != ""){
 	shell_exec('rm /var/www/html/dillon/php/FollowMe/examples/images/' . $_SESSION['user_id'] . '/avatar.*');
 
 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
-	//move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
+	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 }
 
 // 	$conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
