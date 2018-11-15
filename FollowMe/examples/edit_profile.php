@@ -25,9 +25,9 @@ if ($_FILES['new_image']['name'] != ""){
 	$file_type = $_FILES['new_image']['type'];
 	$file_type = substr($file_type,6);
 
-	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
+	unlink("test.txt");
 
-	shell_exec("rm ./limages/" . $_SESSION['user_id'] . "/avatar.*");
+	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
 }
 
