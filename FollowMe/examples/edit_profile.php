@@ -36,7 +36,7 @@ $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 if ($_FILES['new_image']['name'] != ""){
 
 		$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where user_id = \"$user_id\"";
-
+		echo $sql;
 } else {
 
 		$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where user_id = \"$user_id\"";
