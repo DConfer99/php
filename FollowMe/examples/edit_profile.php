@@ -23,7 +23,7 @@ if ($_FILES['new_image']['name'] != ""){
 	$file_type = $_FILES['new_image']['type'];
 	$file_type = substr($file_type,6);
 
-	shell_exec('rm /var/www/html/dillon/php/FollowMe/examples/images/' . $_SESSION['user_id'] . '/avatar.*');
+	shell_exec('rm /var/www/html/dillon/php/FollowMe/examples/images/' . $_SESSION['user_id'] . '/avatar*');
 
 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar" . mktime() . "." .$file_type;
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
