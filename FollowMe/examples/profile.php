@@ -3,7 +3,6 @@
 if(!isset($_SESSION)){
 	session_start();
 }
-echo mktime();
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 $sql= "select avatar_url, first_name, last_name, title from fm_users where user_id in ((select following_user_id from fm_follows where user_id=" . $_SESSION['user_id'] . "));";
 $following=$conn->query($sql);
