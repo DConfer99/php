@@ -23,12 +23,11 @@ if ($_FILES['new_image']['name'] != ""){
 	$file_type = $_FILES['new_image']['type'];
 	$file_type = substr($file_type,6);
 
-	$old_files="./images/" . $_SESSION['user_id'] . "/avatar.png";
-	//unlink($old_files);
 	shell_exec('rm /var/www/html/dillon/php/FollowMe/examples/images/' . $_SESSION['user_id'] . '/avatar.*');
 
 	$new_image_file_path="./images/" . $_SESSION['user_id'] . "/avatar." . $file_type;
 	move_uploaded_file($_FILES['new_image']['tmp_name'], $new_image_file_path);
+	echo $new_image_file_path;
 }
 
 $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
@@ -36,7 +35,6 @@ $conn = new mysqli('localhost', 'dillon', 'southhills#', 'dillon');
 if ($_FILES['new_image']['name'] != ""){
 
 		$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\", avatar_url = \"$new_image_file_path\" where user_id = \"$user_id\"";
-		echo $sql;
 } else {
 
 		$sql = "UPDATE fm_users SET first_name = \"$first_name\", last_name = \"$last_name\", title = \"$title\", description = \"$description\" where user_id = \"$user_id\"";
